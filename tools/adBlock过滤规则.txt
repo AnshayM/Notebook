@@ -1,0 +1,16 @@
+# 下面是adBlock 的个人过滤规则
+
+blog.csdn.net##DIV[class="pulllog-box"]
+passport.csdn.net##IMG[src="https://csdnimg.cn/passport/login-banner.png"]
+mail.163.com##IMG[id="adtag"]
+mail.163.com##DIV[id="1551747939842_dvTabs"][class="gWel-recommend  nui-closeable"]
+mail.163.com##[class="gWel-bottom"]
+mail.163.com##[title="网易严选"]
+mail.163.com##[title="考拉海购"]
+baike.baidu.com##DIV[class="lemmaWgt-promotion-vbaike"]
+baike.baidu.com##DIV[class="promotion_viewport"]
+www.zhihu.com##DIV[class="AdblockBanner"]
+kuaibao.qq.com##DIV[class="slider-box J-sliderbox"]
+kuaibao.qq.com##DIV[id="top_downloader"][class="unified_downloader downloader_download"]
+www.nowcoder.com##DIV[id="jsSideTopicList"][class="module-box side-topic-box"]
+juejin.im##DIV[class="extension"]
