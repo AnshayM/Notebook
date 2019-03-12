@@ -169,7 +169,7 @@ StringBuffer(字符串变量，线程不安全)。
 都是final类，不允许被继承。
 String是不可变的对象，每次对String类进行改变得时候都会生成一个新得Sting对象，然后将指针指向新得String对象。经常改变字符串长度尽量不要使用String，每次使用都会对系统性能产生影响。放内存中引用得兑现多了以后，JVM就会开始i共做，性能就会降低。
 
-StringBuilder和StringBuffer，每次都会对对象本身进行操作，而不是生成新的得对象并改变对象引用。StringBuffer虽然是线程安全的，但是使用意义不大，并且会拖慢程序速度。其线程安全仅仅是保证jvm不抛出异常知识顺利的往下执行而已，不保证逻辑正确和调用顺序正确。大多时候，我们需要的不仅是线程安全，而是锁。在jdk1.5时，提供了非线程安全的StringBuffer实现，并命名为StringBuilder。从jdk1.5开始，javac把所有用加号连接的String运算都隐式的改写成StringBuilder，循环、递归外的字符串拼接几乎都没有性能损耗。
+StringBuilder和StringBuffer，每次都会对对象本身进行操作，而不是生成新的得对象并改变对象引用。StringBuffer虽然是线程安全的，但是使用意义不大，并且会拖慢程序速度。其线程安全仅仅是保证jvm不抛出异常知识顺利的往下执行而已，不保证逻辑正确和调用顺序正确。大多时候，我们需要的不仅是线程安全，而是锁。在jdk1.5时，提供了非线程安全的StringBuffer实现，并命名为StringBuilder。从jdk1.5开始，javac把所有用加号连接的String运算都隐式的改写成StringBuilder，不再因此有内存损耗。但在循环中的字符串拼接，每次循环都会新建一个StringBuilder，也会造成损耗。在这些场景中最好自己创建StringBuilder对象。
 
 #### 8.String str="i"与 String str=new String("i")一样吗？
 
@@ -210,12 +210,141 @@ split(String regex) 根据给定正则表达式的匹配拆分此字符串。
 ……
 
 #### 11.抽象类必须要有抽象方法吗？
-*变体：请说抽象类与接口的异同点。*
-抽象类可以没有抽象方法。
+用abstract修饰的类就是抽象类，并不是说抽象类中必须有抽象方法，即使一个类中的方法全部实现过，也可以用abstract修饰为抽象类。所以抽象类不一定都有抽象方法。
+- 抽象类不可被实例化，只能通过非抽像子类继承后才能实例化。
+
+*变体：请说出抽象类与接口的异同点。*
+
 
 #### 12.普通类和抽象类有哪些区别？
+抽象类本身不可以被实例化，只能被非抽线子类实例化。抽象类可以有抽象方法，需要通过子类覆写对应的抽象方法来实现。普通类不可以有抽象方法。
+
 #### 13.抽象类能使用 final 修饰吗？
+不可以，抽象类只能通过子类继承来实现。不能继承即表示不可用。
+
 #### 14.接口和抽象类有什么区别？
+抽象类：abstract修饰的类。
+对应的抽象方法：仅有声明没有方法体的方法。
+```java public abstract void f();    //没有内容  ```
+继承抽象类的子类需要覆写父类所有抽象方法。
+
+接口时抽象类的以中特殊形式，使用interface修饰，用于说明一个约定，实现此接口的类需要实现接口所定义的所有方法。
+
+- 抽象类是由子类具有相同的一类特征抽象而来，也可以说是其基类或者父类
+- 抽象方法必须为 public 或者 protected（因为如果为 private，则不能被子类继承，子类便无法实现该方法），缺省情况下默认为 public
+- 抽象类不能用来创建对象
+- 抽象方法必须由子类来实现
+- 如果一个类继承于一个抽象类，则子类必须实现父类的抽象方法，如果子类没有实现父类的抽象方法，则必须将子类也定义为抽象类
+- 抽象类还是很有用的重构工具，因为它们使得我们可以很容易地将公共方法沿着继承层次结构向上移动
+
+
+接口是抽象类的延伸，它可以定义没有方法体的方法，要求实现者去实现。
+
+- 接口的所有方法访问权限自动被声明为 public
+- 接口中可以定义“成员变量”，会自动变为 public static final 修饰的静态常量 
+- 可以通过类命名直接访问：ImplementClass.name
+- 不推荐使用接口创建常量类
+- 实现接口的非抽象类必须实现接口中所有方法，抽象类可以不用全部实现
+接口不能创建对象，但可以申明一个接口变量，方便调用
+- 完全解耦，可以编写可复用性更好的代码
+
+一个类只能继承一个抽象类，但可以实现多个接口。
+
 #### 15.java 中 IO 流分为几种？
+
 #### 16.BIO、NIO、AIO 有什么区别？
+
 #### 17.Files的常用方法都有哪些？
+
+--- 
+## 二、容器
+#### 18.java 容器都有哪些？
+|Collection 
+|　　├List 
+|　　│-├LinkedList 随机访问慢，插入移除快
+|　　│-├ArrayList 长于随机访问元素，但是在List中插入和移除元素时较慢
+|　　│-└Vector 
+|　　│　└Stack 
+|　　├Set 
+|　　│├HashSet 
+|　　│├TreeSet 
+|　　│└LinkedSet 
+| 
+|Map 
+　　├Hashtable 
+　　├HashMap 
+　　└WeakHashMap
+
+
+#### 19.Collection 和 Collections 有什么区别？
+
+- Collection是集合接口（集合类的顶级接口），它提供了对集合进行基本操作的接口方法。Collection接口的意义是为各种具体的集合提供了最大化的统一操作方式。直接继承接口有List和Set。
+ Collection   
+├List   
+│├LinkedList   
+│├ArrayList   
+│└Vector   
+│　└Stack   
+└Set
+
+- Collections是集合类的一个工具类，其中提供了一些列静态方法，用于对集合中元素进行排序、搜索以及线程安全等各种操作。[Collections部分API。](https://www.cnblogs.com/cathyqq/p/5279860.html)
+
+
+#### 20.List、Set、Map 之间的区别是什么？
+- List:1.允许重复的对象；2可以插入多个null元素；3有序容器，保证每个元素的插入顺序，输出顺序就是插入顺序。
+- Set：1不可重复；2无序容器（TreeSet通过Comparator或Comparable维护了一个排序顺序）；3只允许一个null元素；4Set接口常用的实现类是HashSet、LinkedHashSet以及TreeSet，最多的是基于HashMap实现的HashSet；TreeSet实现了Sorted接口是一个有序容器。
+- Map：1Map不是Collection的接口或实现类，是一个单独的接口；2每个Entry都有两个对象，Key和Value，Key不可重复。3TreeMap通过Comparator或者Comparable维护了一个排序顺序；3Map中的Key和value都可以为null，但是key不能重复即只能有一个key为null。
+
+#### 21.HashMap 和 Hashtable 有什么区别？
+- HashMap：key和value都可以为null，线程不安全。
+- Hashtable：不允许null作为key或者value，线程安全，但是已经不推荐使用。
+他们拥有相同的接口。如果在单线程中使用HashMap，需要并发访问时使用ConcurrentHashMap
+
+#### 22.如何决定使用 HashMap 还是 TreeMap？
+（待修改）
+TreeMapy内部维护一个排序顺序，HashMap没有。
+HashMap的插入读取速度更高一些。
+
+
+
+#### 23.说一下 HashMap 的实现原理？
+
+
+#### 24.说一下 HashSet 的实现原理？
+
+
+#### 25.ArrayList 和 LinkedList 的区别是什么？
+#### 26.如何实现数组和 List 之间的转换？
+#### 27.ArrayList 和 Vector 的区别是什么？
+#### 28.Array 和 ArrayList 有何区别？
+#### 29.在 Queue 中 poll()和 remove()有什么区别？
+#### 30.哪些集合类是线程安全的？
+#### 31.迭代器 Iterator 是什么？
+#### 32.Iterator 怎么使用？有什么特点？
+#### 33.Iterator 和 ListIterator 有什么区别？
+#### 34.怎么确保一个集合不能被修改？
+
+---
+## 三、多线程
+35.并行和并发有什么区别？
+36.线程和进程的区别？
+37.守护线程是什么？
+38.创建线程有哪几种方式？
+39.说一下 runnable 和 callable 有什么区别？
+40.线程有哪些状态？
+41.sleep() 和 wait() 有什么区别？
+42.notify()和 notifyAll()有什么区别？
+43.线程的 run()和 start()有什么区别？
+44.创建线程池有哪几种方式？
+45.线程池都有哪些状态？
+46.线程池中 submit()和 execute()方法有什么区别？
+47.在 java 程序中怎么保证多线程的运行安全？
+48.多线程锁的升级原理是什么？
+49.什么是死锁？
+50.怎么防止死锁？
+51.ThreadLocal 是什么？有哪些使用场景？
+52.说一下 synchronized 底层实现原理？
+53.synchronized 和 volatile 的区别是什么？
+54.synchronized 和 Lock 有什么区别？
+55.synchronized 和 ReentrantLock 区别是什么？
+56.说一下 atomic 的原理？
