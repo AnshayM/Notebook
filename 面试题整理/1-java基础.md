@@ -335,8 +335,38 @@ HashSet实现Set接口，由哈希表（实质是一个HashMap实例）支持。
 对于HasSet来说，它是基于HashMap实现的，HashSet底层使用HashMap来保存所有元素，因此其实现比较简单， 相干操作都是直接调用HashMap的相关方法来完成。具体可以阅读HashSet源码。
 
 #### 25.ArrayList 和 LinkedList 的区别是什么？
-
+[ArrayList和LinkedList的区别](https://blog.csdn.net/eson_15/article/details/51145788)
+1. ArrayList是实现了基于动态数组的数据结构，而LinkedList是基于链表的数据结构。
+2. ArrayList的所有数据是在同一个地址上,而LinkedList的每个数据都拥有自己的地址。对于随机访问get和set，ArrayList速度要优于后者，因为LinkedList要移动指针。
+3. 对于添加add和删除remove操作，一般会说LinkedList要快，因为ArrayList要移动数据。但实际上，对于添加和删除，两者并不能准确说明哪个快。具体参考源码方法。
+在源码中，ArrayList想要get(int index)元素时，直接返回index位置上的元素，而LinkedList需要通过for循环来查找。虽然LinkedList在查找方法上做了优化，当index < size/2 时，从左边开始查找，反之从右边。但是还是比ArrayList慢，这是毋庸置疑的。
+ArrayList想要在指定位置插入或者删除元素时，主要耗时的时System.arraycopy动作，会移动index后面所有的元素；LinkedList耗时主要是先通过for循环找到index，然后直接插入或者删除(这个动作只需要前后两个对象的指针即可)。这就导致了两者并非一定谁快谁慢。主要影响因素时插入的数据量和插入的位置。尤其时在List末端添加数据时，二者效率不相上下。具体细节查看上述链接。
 #### 26.如何实现数组和 List 之间的转换？
+[javaList和数组相互转换方法](https://blog.csdn.net/zjx2016/article/details/78273192)
+- List转数组
+1. 使用for循环
+2. 使用使用toArray()
+```java
+List<String> list = new ArrayList<String>(){{add("aa");add("bb");add("cc");}};
+String[] array = list.toArray(new String[list.size()]);
+for(int i=0;i<array.length;i++){
+    System.out.println(array[i]);
+}
+```
+- 数组转List
+1. 循环
+2. asList方法
+```java
+ArrayList<String> arrayList = new ArrayList<String>(Arrays.asList(array));
+//如果使用下面这个方法，则返回的是Arrays的一个私有静态类，list1长度是固定的，在增加删除元素时会报UnsupportedOperationException。
+List<String> list1 = Arrays.asList(array);
+```
+3. 使用Collections.addAll()
+```java
+List<String> list2 = new ArrayList<String>(arrays.length);
+Collections.addAll(list2, arrays);
+```
+
 #### 27.ArrayList 和 Vector 的区别是什么？
 #### 28.Array 和 ArrayList 有何区别？
 #### 29.在 Queue 中 poll()和 remove()有什么区别？
@@ -363,61 +393,61 @@ HashSet实现Set接口，由哈希表（实质是一个HashMap实例）支持。
 #### 37.守护线程是什么？
 #### 38.创建线程有哪几种方式？
 #### 39.说一下 runnable 和 callable 有什么区别？
-40.线程有哪些状态？
-41.sleep() 和 wait() 有什么区别？
-42.notify()和 notifyAll()有什么区别？
-43.线程的 run()和 start()有什么区别？
-44.创建线程池有哪几种方式？
-45.线程池都有哪些状态？
-46.线程池中 submit()和 execute()方法有什么区别？
-47.在 java 程序中怎么保证多线程的运行安全？
-48.多线程锁的升级原理是什么？
-49.什么是死锁？
-50.怎么防止死锁？
-51.ThreadLocal 是什么？有哪些使用场景？ 
-52.说一下 synchronized 底层实现原理？
-53.synchronized 和 volatile 的区别是什么？
-54.synchronized 和 Lock 有什么区别？
-55.synchronized 和 ReentrantLock 区别是什么？
-56.说一下 atomic 的原理？
+#### 40.线程有哪些状态？
+#### 41.sleep() 和 wait() 有什么区别？
+#### 42.notify()和 notifyAll()有什么区别？
+#### 43.线程的 run()和 start()有什么区别？
+#### 44.创建线程池有哪几种方式？
+#### 45.线程池都有哪些状态？
+#### 46.线程池中 submit()和 execute()方法有什么区别？
+#### 47.在 java 程序中怎么保证多线程的运行安全？
+#### 48.多线程锁的升级原理是什么？
+#### 49.什么是死锁？
+#### 50.怎么防止死锁？
+#### 51.ThreadLocal 是什么？有哪些使用场景？ 
+#### 52.说一下 synchronized 底层实现原理？
+#### 53.synchronized 和 volatile 的区别是什么？
+#### 54.synchronized 和 Lock 有什么区别？
+#### 55.synchronized 和 ReentrantLock 区别是什么？
+#### 56.说一下 atomic 的原理？
 
-#### 四、反射
-57.什么是反射？
-58.什么是 java 序列化？什么情况下需要序列化？
-59.动态代理是什么？有哪些应用？
-60.怎么实现动态代理？
+## 四、反射
+#### 57.什么是反射？
+#### 58.什么是 java 序列化？什么情况下需要序列化？
+#### 59.动态代理是什么？有哪些应用？
+#### 60.怎么实现动态代理？
 
-#### 五、对象拷贝
+## 五、对象拷贝
 61.为什么要使用克隆？
 62.如何实现对象克隆？
 63.深拷贝和浅拷贝区别是什么？
 
-#### 六、Java Web
-64.jsp 和 servlet 有什么区别？
-65.jsp 有哪些内置对象？作用分别是什么？
-66.说一下 jsp 的 4 种作用域？
-67.session 和 cookie 有什么区别？
-68.说一下 session 的工作原理？
-69.如果客户端禁止 cookie 能实现 session 还能用吗？
-70.spring mvc 和 struts 的区别是什么？
-71.如何避免 sql 注入？
-72.什么是 XSS 攻击，如何避免？
-73.什么是 CSRF 攻击，如何避免？
+## 六、Java Web
+#### 64.jsp 和 servlet 有什么区别？
+#### 65.jsp 有哪些内置对象？作用分别是什么？
+#### 66.说一下 jsp 的 4 种作用域？
+#### 67.session 和 cookie 有什么区别？
+#### 68.说一下 session 的工作原理？
+#### 69.如果客户端禁止 cookie 能实现 session 还能用吗？
+#### 70.spring mvc 和 struts 的区别是什么？
+#### 71.如何避免 sql 注入？
+#### 72.什么是 XSS 攻击，如何避免？
+#### 73.什么是 CSRF 攻击，如何避免？
 
 
-七、异常
-74.throw 和 throws 的区别？
-75.final、finally、finalize 有什么区别？
-76.try-catch-finally 中哪个部分可以省略？
-77.try-catch-finally 中，如果 catch 中 return 了，finally 还会执行吗？
-78.常见的异常类有哪些？
+##七、异常
+#### 74.throw 和 throws 的区别？
+#### 75.final、finally、finalize 有什么区别？
+#### 76.try-catch-finally 中哪个部分可以省略？
+#### 77.try-catch-finally 中，如果 catch 中 return 了，finally 还会执行吗？
+#### 78.常见的异常类有哪些？
 
 
-八、网络
-79.http 响应码 301 和 302 代表的是什么？有什么区别？
-80.forward 和 redirect 的区别？
-81.简述 tcp 和 udp的区别？
-82.tcp 为什么要三次握手，两次不行吗？为什么？
+##八、网络
+#### 79.http 响应码 301 和 302 代表的是什么？有什么区别？
+#### 80.forward 和 redirect 的区别？
+#### 81.简述 tcp 和 udp的区别？
+#### 82.tcp 为什么要三次握手，两次不行吗？为什么？
 83.说一下 tcp 粘包是怎么产生的？
 84.OSI 的七层模型都有哪些？
 85.get 和 post 请求有哪些区别？
