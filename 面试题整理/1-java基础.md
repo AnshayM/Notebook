@@ -368,12 +368,36 @@ Collections.addAll(list2, arrays);
 ```
 
 #### 27.ArrayList 和 Vector 的区别是什么？
+List接口一共有三个实现类：ArrayList、Vector、LinkedList。List用于存放多个元素，能够维护元素的次数，并且允许元素的重复。三个实现类的相关区别如下。
+1. ArrayList是最常用的List实现类，内部是通过数组实现的，它允许对元素进行快速随机访问。数组的缺点是每个元素之间不能有间隔，当数组大小不满足时需要增加存储能力，就要将已有数组的数据复制到新的存储空间中。当ArrayList的中间位置插入或者删除元素时，需要对数组进行复制、移动，代价较高，因此，它适合随机查找和遍历，不适合插入和删除。
+2. Vector和ArrayList一样，也是通过数组实现的，不同的是它支持线程的同步。同一时刻只能有一条线程可以写Vector，避免多线程同时写而引起的不一致性。但实现同步需要很高的花费，因此访问速度比ArrayList慢。
+3. LinkedList是用链表结构存储数据的，适合数据的插入和删除，随机访问和遍历速度较慢。另外它提供了List接口中没有定义的方法，专门用于操作表头和标为元素，可以当作堆栈、队列和双向队列来使用。
+
+**区别**：
+1. ArrayList在内存不够时默认是扩展50% + 1个，Vector是默认扩展1倍。
+2. Vector提供indexOf(obj, start)接口，ArrayList没有。
+3. Vector属于线程安全级别的，但是大多数情况下不使用Vector，因为线程安全需要更大的系统开销。
+
 #### 28.Array 和 ArrayList 有何区别？
+1. Array可以包含基本类型和对象类型，ArrayList只能包含对象类型。
+2. Array大小是固定的，ArrayList大小是动态变化的。
+3. ArrayList提供了更多的方法和特性，如addAll(),removeAll(),iterator()等等。对于基本类型数据，集合使用自动装箱来减少编码工作量。
+
 #### 29.在 Queue 中 poll()和 remove()有什么区别？
+*考察Queue的api。*
+1. queue的增加元素方法add和offer的区别在于，add方法在队列满的情况下将选择抛异常的方法来表示队列已经满了，而offer方法通过返回false表示队列已经满了；在有限队列的情况，使用offer方法优于add方法；
+2. remove方法和poll方法都是删除队列的头元素，remove方法在队列为空的情况下将抛异常，而poll方法将返回null；
+3. element和peek方法都是返回队列的头元素，但是不删除头元素，区别在与element方法在队列为空的情况下，将抛异常，而peek方法将返回null.
+
 #### 30.哪些集合类是线程安全的？
+Vector、Hashtable、ConcurrentHashMap、Stack（栈，继承于Vector）
+
 #### 31.迭代器 Iterator 是什么？
+
 #### 32.Iterator 怎么使用？有什么特点？
+
 #### 33.Iterator 和 ListIterator 有什么区别？
+
 #### 34.怎么确保一个集合不能被修改？
 
 ---
@@ -393,61 +417,61 @@ Collections.addAll(list2, arrays);
 #### 37.守护线程是什么？
 #### 38.创建线程有哪几种方式？
 #### 39.说一下 runnable 和 callable 有什么区别？
-#### 40.线程有哪些状态？
-#### 41.sleep() 和 wait() 有什么区别？
-#### 42.notify()和 notifyAll()有什么区别？
-#### 43.线程的 run()和 start()有什么区别？
-#### 44.创建线程池有哪几种方式？
-#### 45.线程池都有哪些状态？
-#### 46.线程池中 submit()和 execute()方法有什么区别？
-#### 47.在 java 程序中怎么保证多线程的运行安全？
-#### 48.多线程锁的升级原理是什么？
-#### 49.什么是死锁？
-#### 50.怎么防止死锁？
-#### 51.ThreadLocal 是什么？有哪些使用场景？ 
-#### 52.说一下 synchronized 底层实现原理？
-#### 53.synchronized 和 volatile 的区别是什么？
-#### 54.synchronized 和 Lock 有什么区别？
-#### 55.synchronized 和 ReentrantLock 区别是什么？
-#### 56.说一下 atomic 的原理？
+40.线程有哪些状态？
+41.sleep() 和 wait() 有什么区别？
+42.notify()和 notifyAll()有什么区别？
+43.线程的 run()和 start()有什么区别？
+44.创建线程池有哪几种方式？
+45.线程池都有哪些状态？
+46.线程池中 submit()和 execute()方法有什么区别？
+47.在 java 程序中怎么保证多线程的运行安全？
+48.多线程锁的升级原理是什么？
+49.什么是死锁？
+50.怎么防止死锁？
+51.ThreadLocal 是什么？有哪些使用场景？ 
+52.说一下 synchronized 底层实现原理？
+53.synchronized 和 volatile 的区别是什么？
+54.synchronized 和 Lock 有什么区别？
+55.synchronized 和 ReentrantLock 区别是什么？
+56.说一下 atomic 的原理？
 
-## 四、反射
-#### 57.什么是反射？
-#### 58.什么是 java 序列化？什么情况下需要序列化？
-#### 59.动态代理是什么？有哪些应用？
-#### 60.怎么实现动态代理？
+#### 四、反射
+57.什么是反射？
+58.什么是 java 序列化？什么情况下需要序列化？
+59.动态代理是什么？有哪些应用？
+60.怎么实现动态代理？
 
-## 五、对象拷贝
+#### 五、对象拷贝
 61.为什么要使用克隆？
 62.如何实现对象克隆？
 63.深拷贝和浅拷贝区别是什么？
 
-## 六、Java Web
-#### 64.jsp 和 servlet 有什么区别？
-#### 65.jsp 有哪些内置对象？作用分别是什么？
-#### 66.说一下 jsp 的 4 种作用域？
-#### 67.session 和 cookie 有什么区别？
-#### 68.说一下 session 的工作原理？
-#### 69.如果客户端禁止 cookie 能实现 session 还能用吗？
-#### 70.spring mvc 和 struts 的区别是什么？
-#### 71.如何避免 sql 注入？
-#### 72.什么是 XSS 攻击，如何避免？
-#### 73.什么是 CSRF 攻击，如何避免？
+#### 六、Java Web
+64.jsp 和 servlet 有什么区别？
+65.jsp 有哪些内置对象？作用分别是什么？
+66.说一下 jsp 的 4 种作用域？
+67.session 和 cookie 有什么区别？
+68.说一下 session 的工作原理？
+69.如果客户端禁止 cookie 能实现 session 还能用吗？
+70.spring mvc 和 struts 的区别是什么？
+71.如何避免 sql 注入？
+72.什么是 XSS 攻击，如何避免？
+73.什么是 CSRF 攻击，如何避免？
 
 
-##七、异常
-#### 74.throw 和 throws 的区别？
-#### 75.final、finally、finalize 有什么区别？
-#### 76.try-catch-finally 中哪个部分可以省略？
-#### 77.try-catch-finally 中，如果 catch 中 return 了，finally 还会执行吗？
-#### 78.常见的异常类有哪些？
+七、异常
+74.throw 和 throws 的区别？
+75.final、finally、finalize 有什么区别？
+76.try-catch-finally 中哪个部分可以省略？
+77.try-catch-finally 中，如果 catch 中 return 了，finally 还会执行吗？
+78.常见的异常类有哪些？
 
 
-##八、网络
-#### 79.http 响应码 301 和 302 代表的是什么？有什么区别？
-#### 80.forward 和 redirect 的区别？
-#### 81.简述 tcp 和 udp的区别？
-#### 82.tcp 为什么要三次握手，两次不行吗？为什么？
+八、网络
+79.http 响应码 301 和 302 代表的是什么？有什么区别？
+80.forward 和 redirect 的区别？
+81.简述 tcp 和 udp的区别？
+82.tcp 为什么要三次握手，两次不行吗？为什么？
 83.说一下 tcp 粘包是怎么产生的？
 84.OSI 的七层模型都有哪些？
 85.get 和 post 请求有哪些区别？
