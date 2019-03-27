@@ -1,5 +1,3 @@
-# 下面是adBlock 的个人过滤规则
-
 blog.csdn.net##DIV[class="pulllog-box"]
 passport.csdn.net##IMG[src="https://csdnimg.cn/passport/login-banner.png"]
 mail.163.com##IMG[id="adtag"]
@@ -14,3 +12,9 @@ kuaibao.qq.com##DIV[class="slider-box J-sliderbox"]
 kuaibao.qq.com##DIV[id="top_downloader"][class="unified_downloader downloader_download"]
 www.nowcoder.com##DIV[id="jsSideTopicList"][class="module-box side-topic-box"]
 juejin.im##DIV[class="extension"]
+www.w3cschool.cn##DIV[class="widget-main"]
+www.e-learn.cn##DIV[class="card bg-01"]
+www.jianshu.com##A[id="web-note-ad-fixed"]
+blog.csdn.net##DIV[class="right_box footer_box csdn-tracking-statistics"]
+blog.csdn.net##DIV[class="recommend-item-box recommend-ad-box"]
+blog.csdn.net##DIV[class="blog-expert"]
