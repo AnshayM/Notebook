@@ -1,4 +1,4 @@
-package com.datastructure.array;
+package array;
 
 /**
  * 寻找数组的中心索引
@@ -6,7 +6,8 @@ package com.datastructure.array;
  * 如果数组不存在中心索引，那么我们应该返回 -1。如果数组有多个中心索引，那么我们应该返回最靠近左边的那一个。
  * <p>
  * 解法：算总和sum后，从左侧依次元素值加到sumLeft,比较sumleft*2 和sum-nums[i]是否相等
- *如果数量较多，可以从sumleft和sumRight两头作和比较。这样时间维度消耗低。
+ * 如果数量较多，可以从sumleft和sumRight两头作和比较。这样时间维度消耗低。
+ *
  * @author: Anshay
  * @date: 2019/4/11
  */

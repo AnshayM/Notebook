@@ -1,4 +1,4 @@
-package com.datastructure.stackandqueen;
+package stackandqueen;
 
 import java.util.Stack;
 
@@ -8,7 +8,7 @@ import java.util.Stack;
  * 说明：
  * 整数除法只保留整数部分。
  * 给定逆波兰表达式总是有效的。换句话说，表达式总会得出有效数值且不存在除数为 0 的情况。
- *
+ * <p>
  * 循环或者递归两种方法
  *
  * @author: Anshay

@@ -1,4 +1,4 @@
-package com.datastructure.leecode;
+package leecode;
 
 /**
  * 合并两个有序链表

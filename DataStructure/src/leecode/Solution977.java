@@ -1,6 +1,4 @@
-package com.datastructure.leecode;
-
-import java.util.Stack;
+package leecode;
 
 /**
  * 有序数组的平方

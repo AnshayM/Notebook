@@ -1,4 +1,4 @@
-package com.datastructure.stackandqueen;
+package stackandqueen;
 
 /**
  * 小岛个数

@@ -1,5 +1,4 @@
-package com.datastructure.array;
-
+package array;
 /**
  * 至少是其他数字两倍的最大数,即找最大的两个数，然后max1>=max2*2
  *

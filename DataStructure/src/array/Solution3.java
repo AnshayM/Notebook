@@ -1,6 +1,4 @@
-package com.datastructure.array;
-
-import com.sun.org.apache.xpath.internal.operations.Plus;
+package array;
 
 /**
  * 加一

@@ -1,8 +1,8 @@
-package com.datastructure.stackandqueen;
+package stackandqueen;
 
 /**
  * 递归解法
- *
+ * <p>
  * 与第一种方法区别不大，这里先求完一个岛屿中所有子元素得子元素，再推出球兄弟元素的子元素
  *
  * @author: Anshay
