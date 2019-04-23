@@ -13,22 +13,12 @@ package leecode;
 public class Solution104 {
 
     public int maxDepth(TreeNode root) {
-        int num = 1;
-        num = maxDepth(root, num);
-        return num;
-    }
-
-    public int maxDepth(TreeNode root, int num) {
         if (root == null) {
-            return num - 1;
+            return 0;
         }
-        int leftDeep = 0;
-        int rightDeep = 0;
-        if (root != null) {
-            leftDeep = maxDepth(root.left, num);
-            rightDeep = maxDepth(root.right, num);
-        }
-        return leftDeep >= rightDeep ? leftDeep : rightDeep;
+        int leftLen = 1 + maxDepth(root.left);
+        int rightLen = 1 + maxDepth(root.right);
+        return leftLen > rightLen ? leftLen : rightLen;
     }
 
     class TreeNode {
