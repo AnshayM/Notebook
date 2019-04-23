@@ -110,9 +110,39 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="975138179">
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="1" />
+          <entry key="txt" value="13" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="1" />
+          <entry key="PLAIN_TEXT" value="13" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+<<<<<<< Updated upstream
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/leecode/Solution104.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -166,6 +196,13 @@
                 <element signature="e#388#389#0" expanded="true" />
                 <element signature="e#403#404#0" expanded="true" />
               </folding>
+=======
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/leecode/Solution665.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="418">
+              <caret line="19" column="30" lean-forward="true" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
@@ -213,6 +250,7 @@
         <option value="$PROJECT_DIR$/src/datastructure/Solution26.java" />
         <option value="$PROJECT_DIR$/src/exercise/Solution26.java" />
         <option value="$PROJECT_DIR$/src/leecode/Solution26.java" />
+<<<<<<< Updated upstream
         <option value="$PROJECT_DIR$/src/array/Solution1.java" />
         <option value="$PROJECT_DIR$/src/array/Solution2.java" />
         <option value="$PROJECT_DIR$/src/array/Solution3.java" />
@@ -253,6 +291,9 @@
         <option value="$PROJECT_DIR$/src/leecode/Solution292.java" />
         <option value="$PROJECT_DIR$/src/leecode/Solution175.java" />
         <option value="$PROJECT_DIR$/src/leecode/Solution852.java" />
+=======
+        <option value="$PROJECT_DIR$/src/leecode/Solution665.java" />
+>>>>>>> Stashed changes
       </list>
     </option>
   </component>
@@ -268,6 +309,7 @@
       <select />
     </treeState>
   </component>
+<<<<<<< Updated upstream
   <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="1592" />
     <option name="y" value="51" />
@@ -276,6 +318,13 @@
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
+=======
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="658" />
+    <option name="y" value="33" />
+    <option name="width" value="1936" />
+    <option name="height" value="1100" />
+>>>>>>> Stashed changes
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -318,7 +367,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555821454720" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555949785334" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -474,6 +523,7 @@
       <option name="project" value="LOCAL" />
       <updated>1555997867325</updated>
     </task>
+<<<<<<< Updated upstream
     <option name="localTasksCounter" value="5" />
     <servers />
   </component>
@@ -485,6 +535,26 @@
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1444563" />
+=======
+    <task id="LOCAL-00001" summary="非递减数列">
+      <created>1555949789524</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1555949789524</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="11664000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.10554371" />
+>>>>>>> Stashed changes
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -493,8 +563,13 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
+<<<<<<< Updated upstream
       <window_info anchor="bottom" id="Run" order="2" weight="0.32850778" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997773" />
+=======
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32921347" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+>>>>>>> Stashed changes
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -502,7 +577,7 @@
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="11" />
+      <window_info anchor="bottom" id="Messages" order="11" visible="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -524,11 +599,16 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
+<<<<<<< Updated upstream
     <MESSAGE value="更新代码结构" />
     <MESSAGE value="新增工具类" />
     <MESSAGE value="0422" />
     <MESSAGE value="0423-3题" />
     <option name="LAST_COMMIT_MESSAGE" value="0423-3题" />
+=======
+    <MESSAGE value="非递减数列" />
+    <option name="LAST_COMMIT_MESSAGE" value="非递减数列" />
+>>>>>>> Stashed changes
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -728,6 +808,7 @@
     <entry file="file://$PROJECT_DIR$/src/stackandqueen/Solution2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
+<<<<<<< Updated upstream
           <caret line="5" column="3" lean-forward="true" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
         </state>
       </provider>
@@ -813,6 +894,9 @@
             <element signature="e#534#535#0" expanded="true" />
             <element signature="e#557#558#0" expanded="true" />
           </folding>
+=======
+          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
@@ -844,6 +928,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/src/leecode/Solution104.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="295">
@@ -888,6 +973,12 @@
             <element signature="e#388#389#0" expanded="true" />
             <element signature="e#403#404#0" expanded="true" />
           </folding>
+=======
+    <entry file="file://$PROJECT_DIR$/src/leecode/Solution665.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="19" column="30" lean-forward="true" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
