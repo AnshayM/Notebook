@@ -10,6 +10,12 @@ import java.util.logging.Logger;
  */
 public class MyUtil {
     /*Log*/
-    public static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+    public static void print(String str, Object o) {
+        System.out.print(str + " ");
+        System.out.println(o);
+    }
 
+    public static void print(Object o) {
+        System.out.println(o);
+    }
 }
