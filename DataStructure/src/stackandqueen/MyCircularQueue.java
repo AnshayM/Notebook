@@ -1,20 +1,28 @@
-package com.datastructure.stackandqueen;
+package stackandqueen;
 
 /**
  * @author: Anshay
  * @date: 2019/4/2
  */
 public class MyCircularQueue {
-    /** 数据 */
+    /**
+     * 数据
+     */
     private int[] data;
 
-    /** 元素数量 */
+    /**
+     * 元素数量
+     */
     private int num = 0;
 
-    /** 队首指针 */
+    /**
+     * 队首指针
+     */
     private int front = 0;
 
-    /** 队尾指针 */
+    /**
+     * 队尾指针
+     */
     private int rear = -1;
 
     public MyCircularQueue(int k) {
@@ -23,7 +31,9 @@ public class MyCircularQueue {
         }
     }
 
-    /** 首先需要判断队列是否已满 */
+    /**
+     * 首先需要判断队列是否已满
+     */
     public boolean enQueue(int value) {
         if (!isFull()) {
             rear = (rear + 1) % data.length;
@@ -36,7 +46,9 @@ public class MyCircularQueue {
         return false;
     }
 
-    /** 首先需要判断队列是否为空 */
+    /**
+     * 首先需要判断队列是否为空
+     */
     public boolean deQueue() {
         if (!isEmpty()) {
             front = (front + 1) % data.length;
@@ -47,7 +59,9 @@ public class MyCircularQueue {
         return false;
     }
 
-    /** 先判断队列是否为空，若不为空则返回队首指针指向元素 */
+    /**
+     * 先判断队列是否为空，若不为空则返回队首指针指向元素
+     */
     public int Front() {
         if (!isEmpty()) {
             return data[front];
@@ -56,7 +70,9 @@ public class MyCircularQueue {
         return -1;
     }
 
-    /** 先判断队列是否为空，若不为空则返回队尾指针指向元素 */
+    /**
+     * 先判断队列是否为空，若不为空则返回队尾指针指向元素
+     */
     public int Rear() {
         if (!isEmpty()) {
             return data[rear];
@@ -66,12 +82,16 @@ public class MyCircularQueue {
     }
 
     /** Checks whether the circular queue is empty or not. */
-    /** 队首减队尾 */
+    /**
+     * 队首减队尾
+     */
     public boolean isEmpty() {
         return num == 0;
     }
 
-    /** 队尾减队首 */
+    /**
+     * 队尾减队首
+     */
     public boolean isFull() {
         return num == data.length;
     }

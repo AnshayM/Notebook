@@ -1,4 +1,4 @@
-package com.datastructure.leecode;
+package leecode;
 
 import java.util.HashMap;
 import java.util.Map;

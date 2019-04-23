@@ -1,4 +1,4 @@
-package com.datastructure.leecode;
+package leecode;
 
 /**
  * 转换成小写字母

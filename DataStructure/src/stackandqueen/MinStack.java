@@ -1,4 +1,4 @@
-package com.datastructure.stackandqueen;
+package stackandqueen;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
