@@ -10,5 +10,5 @@ package leecode;
  * @date: 2019/4/23
  */
 public class Solution175 {
-    String sql = "";
+    String sql = "select p.FirstName, p.LastName, a.City, a.State from Person p left join Address a on p.PersonId = a.PersonId";
 }
