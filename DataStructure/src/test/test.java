@@ -10,10 +10,11 @@ public class test {
     public static void main(String[] args) {
         String str = "12345";
         int i = 0;
-        char a = str.charAt(++i);
-        MyUtil.logger.info("sss");
-        MyUtil.logger.warning("ddd");
-        System.out.print(a);
+//        char a = str.charAt(i++);
+        int j = i++;
+//        MyUtil.print(a);
+        MyUtil.print(j);
+        MyUtil.print(i);
 
     }
 }
