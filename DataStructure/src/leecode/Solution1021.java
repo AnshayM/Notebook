@@ -1,7 +1,4 @@
-package com.datastructure.leecode;
-
-import java.util.ArrayList;
-import java.util.List;
+package leecode;
 
 /**
  * 删除最外层的括号
@@ -15,18 +12,18 @@ public class Solution1021 {
         String ss = removeOuterParentheses(s);
         System.out.println(ss);
     }
+
     public static String removeOuterParentheses(String S) {
         char[] ca = S.toCharArray();
         StringBuilder sb = new StringBuilder();
         int count = 0;
-        for (int i = 0;i < ca.length;++i) {
+        for (int i = 0; i < ca.length; ++i) {
             if (ca[i] == '(') {
                 if (count > 0) {
                     sb.append("(");
                 }
                 count++;
-            }
-            else {
+            } else {
                 count--;
                 if (count != 0) {
                     sb.append(")");

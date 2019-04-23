@@ -1,4 +1,4 @@
-package com.datastructure.leecode;
+package leecode;
 
 /**
  * 宝石与石头

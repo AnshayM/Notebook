@@ -1,6 +1,4 @@
-package com.datastructure.array;
-
-import com.example.thinkinjava.util.Util;
+package array;
 
 import java.util.ArrayList;
 import java.util.List;

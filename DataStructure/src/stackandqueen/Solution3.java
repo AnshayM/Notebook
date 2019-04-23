@@ -1,4 +1,4 @@
-package com.datastructure.stackandqueen;
+package stackandqueen;
 
 /**
  * 完全平方数

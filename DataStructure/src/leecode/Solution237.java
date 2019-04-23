@@ -1,4 +1,4 @@
-package com.datastructure.leecode;
+package leecode;
 
 /**
  * 删除链表中的节点
@@ -15,8 +15,8 @@ package com.datastructure.leecode;
 public class Solution237 {
 
     public void deleteNode(ListNode node) {
-            node.val = node.next.val;
-            node.next = node.next.next;
+        node.val = node.next.val;
+        node.next = node.next.next;
     }
 
     static class ListNode {
