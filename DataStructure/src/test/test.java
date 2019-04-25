@@ -8,13 +8,10 @@ import util.MyUtil;
  */
 public class test {
     public static void main(String[] args) {
-        String str = "12345";
-        int i = 0;
-//        char a = str.charAt(i++);
-        int j = i++;
-//        MyUtil.print(a);
-        MyUtil.print(j);
-        MyUtil.print(i);
+        int[] a = new int[]{};
+        for (int i = 0; i < a.length; i++) {
+            MyUtil.print("打印；");
+        }
 
     }
 }
