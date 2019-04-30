@@ -1,34 +1,30 @@
 package array;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
- * 寻找数组的中心索引
- * 我们是这样定义数组中心索引的：数组中心索引的左侧所有元素相加的和等于右侧所有元素相加的和。
- * 如果数组不存在中心索引，那么我们应该返回 -1。如果数组有多个中心索引，那么我们应该返回最靠近左边的那一个。
+ * 两数之和
+ * 给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。
+ * 你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。
  * <p>
- * 解法：算总和sum后，从左侧依次元素值加到sumLeft,比较sumleft*2 和sum-nums[i]是否相等
- * 如果数量较多，可以从sumleft和sumRight两头作和比较。这样时间维度消耗低。
+ * 思路：用hashMap，nums[i]做key，i做value
  *
  * @author: Anshay
- * @date: 2019/4/11
+ * @date: 2019/4/30
  */
 public class Solution1 {
-    public static void main(String[] args) {
-        int[] nums = new int[]{1, 7, 3, 6, 5, 6};
-        int a = (int) pivotIndex(nums);
-    }
-
-    public static int pivotIndex(int[] nums) {
-        int sum = 0;
-        int sumLeft = 0;
+    public int[] twoSum(int[] nums, int target) {
+        Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
-            sum += nums[i];
+            map.put(nums[i], i);
         }
         for (int i = 0; i < nums.length; i++) {
-            if (sumLeft * 2 == sum - nums[i]) {
-                return i;
+            Integer j = map.get(target - nums[i]);
+            if (j != null && j != i) {
+                return new int[]{i, j};
             }
-            sumLeft += nums[i];
         }
-        return -1;
+        return new int[]{};
     }
 }
