@@ -11,31 +11,44 @@ import java.util.Stack;
  * @date: 2019/4/29
  */
 public class Solution7 {
-    public String decodeString(String s) {
+    public static void main(String[] args) {
+        String res = decodeString("3[a]2[bc]");
+    }
+
+    public static String decodeString(String s) {
         if (s == null || "".equals(s)) {
             return s;
         }
-        StringBuilder sb = new StringBuilder();
-        Stack<Integer> stack = new Stack();
-        int num = 0;//数字
+        Stack<String> stack = new Stack<>();
         for (int i = 0; i < s.length(); i++) {
-            char ch = s.charAt(i);
-            int index = 0;
+            if (']' == s.charAt(i)) {
+                // 对应字符串
+                String str = "";
+                while (!"[".equals(stack.peek())) {
+                    str = stack.pop() + str;
+                }
+                stack.pop();
 
-            if (ch >= 48 && ch <= 57) {
-                num = ch - '0' + num * 10;
-            } else if ('[' == ch) {
-
-                stack.add(i);
-            } else if (']' == ch) {
-                index = stack.pop();
-                //这里开始算数
-                //...
-                sb.append("");//加进来
-                num = 0;
+                // 数字
+                String countStr = "";
+                while (!stack.isEmpty() && (stack.peek().charAt(0) >= '0' && stack.peek().charAt(0) <= '9')) {
+                    countStr = stack.pop() + countStr;
+                }
+                int count = Integer.parseInt(countStr);
+                String resStr = "";
+                for (int j = 0; j < count; j++) {
+                    resStr += str;
+                }
+                stack.push(resStr);
+            } else {
+                String str = "" + s.charAt(i);
+                stack.push(str);
             }
-
         }
-        return null;
+        String res = "";
+        while (!stack.isEmpty()) {
+            res = stack.pop() + res;
+        }
+        return res;
     }
 }
