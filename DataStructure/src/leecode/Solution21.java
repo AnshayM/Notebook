@@ -1,5 +1,7 @@
 package leecode;
 
+import util.ListNode;
+
 /**
  * 合并两个有序链表
  * 由小到大
@@ -60,22 +62,6 @@ public class Solution21 {
         return l1;
     }
 
-    static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int x) {
-            val = x;
-        }
-
-        ListNode(int x, ListNode node) {
-            this.val = x;
-            this.next = node;
-        }
-    }
 }
 
 
