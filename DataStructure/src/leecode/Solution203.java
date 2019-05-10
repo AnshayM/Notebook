@@ -1,5 +1,7 @@
 package leecode;
 
+import util.ListNode;
+
 /**
  * 移除链表元素
  * 删除链表中等于给定值 val 的所有节点。
@@ -24,12 +26,4 @@ public class Solution203 {
         return header.next;
     }
 
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
 }

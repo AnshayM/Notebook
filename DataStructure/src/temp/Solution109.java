@@ -1,5 +1,7 @@
 package temp;
 
+import util.ListNode;
+
 /**
  * 有序链表转换二叉搜索树
  * 给定一个单链表，其中的元素按升序排序，将其转换为高度平衡的二叉搜索树。
@@ -13,14 +15,7 @@ public class Solution109 {
         return null;
     }
 
-    public class ListNode {
-        int val;
-        ListNode next;
 
-        ListNode(int x) {
-            val = x;
-        }
-    }
 
     public class TreeNode {
         int val;
