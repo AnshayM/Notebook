@@ -9,13 +9,10 @@ package stackandqueen;
  * @date: 2019/5/3
  */
 public class Solution9 {
-    private int row;
-    private int col;
-    private int[][] vector = new int[][]{{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
 
     public int[][] updateMatrix(int[][] matrix) {
         int row = matrix.length;
-       int  col = matrix[0].length;
+        int col = matrix[0].length;
         // 第一次遍历，正向遍历，根据相邻左元素和上元素得出当前元素的对应结果
         for (int i = 0; i < row; i++) {
             for (int j = 0; j < col; j++) {
