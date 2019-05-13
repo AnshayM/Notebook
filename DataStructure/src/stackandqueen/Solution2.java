@@ -27,7 +27,7 @@ public class Solution2 {
             return 0;
         }
         isVisited[0] = true;
-        Queue<Integer> queue = new LinkedList<>();//生成队列，用来添加所有可能的位置，部分顺序，顺序由varLast和last这两个变量来控制。
+        Queue<Integer> queue = new LinkedList<>();//生成队列，用来添加所有可能的位置，不分顺序，顺序由varLast和last这两个变量来控制。
 
         int last = Integer.parseInt(target);
         queue.offer(last);//把target加到队列里
