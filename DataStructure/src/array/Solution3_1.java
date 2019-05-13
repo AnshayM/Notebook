@@ -11,7 +11,7 @@ package array;
  * @author: Anshay
  * @date: 2019/4/11
  */
-public class Solution_1 {
+public class Solution3_1 {
     public static void main(String[] args) {
         int[] nums = new int[]{1, 7, 3, 6, 5, 6};
         int a = (int) pivotIndex(nums);
