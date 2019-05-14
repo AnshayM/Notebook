@@ -8,10 +8,7 @@ import util.MyUtil;
  */
 public class test {
     public static void main(String[] args) {
-        int[] a = new int[]{};
-        for (int i = 0; i < a.length; i++) {
-            MyUtil.print("打印；");
-        }
-
+        int i = "".indexOf(null);
+        MyUtil.print(i);
     }
 }
