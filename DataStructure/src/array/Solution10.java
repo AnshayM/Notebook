@@ -5,6 +5,8 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
+ * 杨辉三角
+ *
  * @author: Anshay
  * @date: 2019/5/14
  */
