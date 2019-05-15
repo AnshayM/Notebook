@@ -8,7 +8,10 @@ import util.MyUtil;
  */
 public class test {
     public static void main(String[] args) {
-        int i = "".indexOf(null);
-        MyUtil.print(i);
+        String s = "sdfsd        aaa";
+        s = s.trim();
+        String[] s1 = s.split(" ");
+        int a = 0;
+
     }
 }
