@@ -11,24 +11,44 @@ package array;
  * @date: 2019/5/15
  */
 public class Solution12 {
-    /*循环k次，每次往后挪一位*/
+    /**
+     * 双重循环
+     * 时间复杂度：O(kn)
+     * 空间复杂度：O(1)
+     */
     public void rotate1(int[] nums, int k) {
-        int length = nums.length;
-        int temp = nums[length - 1];
+        int len = nums.length;
+        k %= nums.length;
         for (int i = 0; i < k; i++) {
-            for (int j = length - 1; j >= 0; j--) {
+            int temp = nums[len - 1];
+            for (int j = len - 1; j > 0; j--) {
                 nums[j] = nums[j - 1];
             }
             nums[0] = temp;
         }
     }
 
-    /*数组拼接,注意越界*/
+    /**
+     * 翻转
+     * 时间复杂度：O(n)
+     * 空间复杂度：O(1)
+     */
     public void rotate2(int[] nums, int k) {
-//        k %= nums.length;
-//        int[] res = new int[k];
-//        System.arraycopy(nums, nums.length - k, res, 0, k);
-//        System.arraycopy(nums, 0, nums, k , nums.length - k);
-//        System.arraycopy(res, 0, nums, 0, k);
+        int len = nums.length;
+        k %= nums.length;
+        /*先整体翻转，再翻转前K个，再翻转后面的*/
+        reverser(nums, 0, len - 1);
+        reverser(nums, 0, k - 1);
+        reverser(nums, k, len - 1);
+
     }
+
+    public void reverser(int[] nums, int start, int end) {
+        while (start < end) {
+            int temp = nums[start];
+            nums[start++] = nums[end];
+            nums[end--] = temp;
+        }
+    }
+
 }
