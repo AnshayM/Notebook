@@ -8,7 +8,7 @@ package array;
  * @date: 2019/5/15
  */
 public class Solution15 {
-    /*直接从头部覆盖*/
+    /*直接从头部覆盖，这样更快*/
     public void moveZeroes(int[] nums) {
         int cursor = 0;
         for (int i = 0; i < nums.length; i++) {
@@ -26,9 +26,11 @@ public class Solution15 {
         int temp;
         int i = 0;
         while (i < end) {
+            // 找到第一个0的下标
             while (nums[i] != 0 && i < end) {
                 i++;
             }
+            // 这一步其实可以省略，直接到后面等于0就可以
             temp = nums[i];
             for (int j = i; j < end; j++) {
                 nums[j] = nums[j + 1];
