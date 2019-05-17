@@ -1,9 +1,5 @@
 package util;
 
-import leecode.Solution92;
-
-import java.util.List;
-
 /**
  * 自定义公用链表节点类
  *
@@ -19,5 +15,6 @@ public class ListNode {
 
     public ListNode(int x) {
         val = x;
+        next = null;
     }
 }
