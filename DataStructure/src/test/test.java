@@ -1,6 +1,9 @@
 package test;
 
+import linkedlist.MyLinkedList;
 import util.MyUtil;
+
+import java.util.LinkedList;
 
 /**
  * @author: Anshay
@@ -8,10 +11,7 @@ import util.MyUtil;
  */
 public class test {
     public static void main(String[] args) {
-        String s = "sdfsd        aaa";
-        s = s.trim();
-        String[] s1 = s.split(" ");
-        int a = 0;
-
+        int a = Integer.MAX_VALUE;
+        MyUtil.print(a / 10);
     }
 }
