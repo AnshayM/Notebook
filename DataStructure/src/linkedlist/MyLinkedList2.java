@@ -1,6 +1,8 @@
 package linkedlist;
 
 /**
+ * 设计链表(双链表)
+ *
  * @author: Anshay
  * @date: 2019/5/17
  */
@@ -19,7 +21,9 @@ public class MyLinkedList2 {
         }
     }
 
-    /** Initialize your data structure here. */
+    /**
+     * Initialize your data structure here.
+     */
     public MyLinkedList2() {
         root = new Node(0, null);
         rear = root;
@@ -60,7 +64,9 @@ public class MyLinkedList2 {
         size++;
     }
 
-    /** Append a node of value val to the last element of the linked list. */
+    /**
+     * Append a node of value val to the last element of the linked list.
+     */
     public void addAtTail(int val) {
         Node node = new Node(val, null);
         rear.next = node;
@@ -95,7 +101,9 @@ public class MyLinkedList2 {
         size++;
     }
 
-    /** Delete the index-th node in the linked list, if the index is valid. */
+    /**
+     * Delete the index-th node in the linked list, if the index is valid.
+     */
     public void deleteAtIndex(int index) {
         if (index < 0 || index >= size) {
             return;

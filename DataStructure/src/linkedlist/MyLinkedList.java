@@ -1,7 +1,7 @@
 package linkedlist;
 
 /**
- * 设计链表
+ * 设计链表(单链表)
  *
  * @author: Anshay
  * @date: 2019/5/16
