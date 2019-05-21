@@ -3,9 +3,6 @@ package linkedlist;
 import util.ListNode;
 import util.MyUtil;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * 回文链表
  * 请判断一个链表是否为回文链表。
