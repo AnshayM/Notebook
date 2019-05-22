@@ -1,5 +1,9 @@
 package linkedlist;
 
+import util.ListNode;
+
+import java.util.Stack;
+
 /**
  * 扁平化多级双向链表
  * <p>
@@ -12,7 +16,31 @@ package linkedlist;
  */
 public class Solution10 {
     public Node flatten(Node head) {
-        return null;
+        if (head == null) {
+            return null;
+        }
+        if (head.next == null && head.child == null) {
+            return head;
+        }
+
+        Node cur = head;
+        Stack<Node> stack = new Stack<>();
+        while (cur != null && (cur.next != null || cur.child != null || stack.size() > 0)) {
+            if (cur.child != null) {
+                if (cur.next != null) {
+                    stack.push(cur.next);
+                }
+                cur.next = cur.child;
+                cur.child.prev = cur;
+                cur.child = null;
+            } else if (cur.child == null && !stack.isEmpty()) {
+                Node next = stack.pop();
+                cur.next = next;
+                next.prev = cur;
+            }
+            cur = cur.next;
+        }
+        return head;
     }
 
     private class Node {
