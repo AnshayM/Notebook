@@ -21,6 +21,7 @@ public class Solution1 {
         }
         for (int i = 0; i < nums.length; i++) {
             Integer j = map.get(target - nums[i]);
+            /*避免元素是目标值一半的情况*/
             if (j != null && j != i) {
                 return new int[]{i, j};
             }
