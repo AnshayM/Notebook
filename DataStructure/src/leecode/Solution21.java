@@ -33,31 +33,29 @@ public class Solution21 {
             l1 = l2;
             l2 = temp;
         }
-        ListNode temp1 = l1;
-        ListNode temp2 = l2;
-        // 把 list2 一个一个插入到list1中，所以比判断temp2是否为空，temp1.next是否为空
-        while (temp2 != null && temp1.next != null) {
-            if (temp2.val < temp1.next.val) {
+        ListNode cur1 = l1;
+        ListNode cur2 = l2;
+        // 把 list2 一个一个插入到list1中，所以比判断cur2是否为空，cur1.next是否为空
+        while (cur2 != null && cur1.next != null) {
+            if (cur2.val < cur1.next.val) {
                 //存储下一个节点
-                ListNode item1 = temp1.next;
+                ListNode item1 = cur1.next;
                 // 创建新节点item2,准备把新节点加到l1中
-                ListNode item2 = new ListNode(temp2.val);
-                // 设置此当前节点的next为新节点
-                temp1.next = item2;
+                cur1.next = new ListNode(cur2.val);
                 // 新节点的next为下一个节点
-                item2.next = item1;
+                cur1.next.next = item1;
                 // 下一次比较还是要和item1比较，新加了节点所以list1要后挪一位
-                temp1 = temp1.next;
+                cur1 = cur1.next;
                 // list2后挪一位
-                temp2 = temp2.next;
+                cur2 = cur2.next;
             } else {
                 // 不满足条件，list1往后挪一位
-                temp1 = temp1.next;
+                cur1 = cur1.next;
             }
         }
-        // 如果temp2为空了，则会跳出来，所以能走到这里来的情况就是temp1为空了，但是temp2还有值且都比最后一个temp1大，直接装在后面即可
-        if (temp1.next == null) {
-            temp1.next = temp2;
+        // 如果cur2为空了，则会跳出来，所以能走到这里来的情况就是cur1为空了，但是cur2还有值且都比最后一个cur1大，直接装在后面即可
+        if (cur1.next == null) {
+            cur1.next = cur2;
         }
         return l1;
     }
