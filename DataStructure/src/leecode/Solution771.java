@@ -19,6 +19,19 @@ public class Solution771 {
     }
 
     public static int numJewelsInStones(String J, String S) {
+        if (J == null || "".equals(J) || S == null | "".equals(S)) {
+            return 0;
+        }
+        int count = 0;
+        for (int i = 0; i < S.length(); i++) {
+            if (J.indexOf(S.charAt(i)) > -1) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public static int numJewelsInStones2(String J, String S) {
         // 未赋值的都默认为0
         int[] lowerCaseList = new int[26];
         int[] upperCaseList = new int[26];
