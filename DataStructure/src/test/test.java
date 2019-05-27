@@ -1,7 +1,5 @@
 package test;
 
-import linkedlist.MyLinkedList;
-import util.ListNode;
 import util.MyUtil;
 
 import java.util.*;
@@ -12,27 +10,17 @@ import java.util.*;
  */
 public class test {
     public static void main(String[] args) {
-        char a = '.';
-        if (".".equals(a)) {
-            MyUtil.print(1234);
-        } else {
-            MyUtil.print(456);
+//        RandomizedSet1 obj = new RandomizedSet1();
+//        boolean param_1 = obj.insert(1);
+//        boolean param_2 = obj.remove(2);
+//        int param_3 = obj.getRandom();
+        int i = 0;
+        while (i++ < 100) {
+            int index = new Random().nextInt(9);
+            MyUtil.print(index + "--");
 
         }
 
     }
 
-    public int numJewelsInStones(String J, String S) {
-        if (J == null || "".equals(J) || S == null | "".equals(S)) {
-            return 0;
-        }
-        int count = 0;
-        for (int i = 0; i < S.length(); i++) {
-            char ch = S.charAt(i);
-            if (J.indexOf(ch) > -1) {
-                count++;
-            }
-        }
-        return count;
-    }
 }
