@@ -51,11 +51,7 @@ public class Solution8 {
         Map<Integer, Integer> map = new HashMap<>();
         List<Integer> list = new ArrayList<>();
         for (int item : nums1) {
-            if (map.containsKey(item)) {
-                map.put(item, map.get(item) + 1);
-            } else {
-                map.put(item, 1);
-            }
+            map.put(item, map.getOrDefault(item, 0) + 1);
         }
         for (int item : nums2) {
             if (map.containsKey(item) && map.get(item) > 0) {
