@@ -12,9 +12,16 @@ import java.util.*;
  */
 public class test {
     public static void main(String[] args) {
-        int[] n = new int[0];
+        char a = '.';
+        if (".".equals(a)) {
+            MyUtil.print(1234);
+        } else {
+            MyUtil.print(456);
+
+        }
 
     }
+
     public int numJewelsInStones(String J, String S) {
         if (J == null || "".equals(J) || S == null | "".equals(S)) {
             return 0;
