@@ -1,6 +1,7 @@
 package array;
 /**
  * 至少是其他数字两倍的最大数,即找最大的两个数，然后max1>=max2*2
+ * 找下标。
  *
  * @author: Anshay
  * @date: 2019/4/11
