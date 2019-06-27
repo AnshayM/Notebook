@@ -25,3 +25,4 @@ mail.163.com##IFRAME[id="1554709464029_iframe"][src="//you.163.com/act/entry/4M9
 zhuanlan.zhihu.com##DIV[class="AdblockBanner"]
 mail.163.com##[title="免费课程"]
 mail.163.com##LI[id="_mail_component_144_144"][class="js-component-component gWel-mailInfo-item gWel-mailInfo-pinle gWel-mailInfo-err"]
+@@|http://www.ruanyifeng.com/blog/2019/05/weekly-issue-55.html|$document

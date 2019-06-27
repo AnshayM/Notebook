@@ -25,7 +25,7 @@ public class Solution15 {
             map.put(num, map.getOrDefault(num, 0) + 1);
         }
 
-        /*优先队列（覆写了compare方法）*/
+        /*优先队列（覆写了compare方法），内部维护一个排序，最前面的都是最小的*/
         PriorityQueue<Integer> queue = new PriorityQueue<>(new Comparator<Integer>() {
             @Override
             public int compare(Integer o1, Integer o2) {
