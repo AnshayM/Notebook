@@ -10,16 +10,10 @@ import java.util.*;
  */
 public class test {
     public static void main(String[] args) {
-//        RandomizedSet1 obj = new RandomizedSet1();
-//        boolean param_1 = obj.insert(1);
-//        boolean param_2 = obj.remove(2);
-//        int param_3 = obj.getRandom();
+        String[] a={"1","2","3","4"};
         int i = 0;
-        while (i++ < 100) {
-            int index = new Random().nextInt(9);
-            MyUtil.print(index + "--");
-
-        }
+        String s1 = a[i++];
+        String s2 = a[++i];
 
     }
 
