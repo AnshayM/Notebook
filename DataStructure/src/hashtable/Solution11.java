@@ -28,7 +28,7 @@ public class Solution11 {
                 if ('.' == board[i][j]) {
                     continue;
                 }
-                // 对应的数字
+                // 对应的数字1-9，但是下标从0开始
                 int num = board[i][j] - '1';
                 int blockIndex = i / 3 * 3 + j / 3;
                 if (row[i][num] || col[j][num] || block[blockIndex][num]) {
