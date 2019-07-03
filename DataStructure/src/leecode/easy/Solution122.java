@@ -8,7 +8,7 @@ package leecode.easy;
  *
  * 思路：取结果为正值的prices[i + 1] - prices[i]的累积和
  *
- * @author: machao
+ * @author: Anshay
  * @date: 2019/7/1
  */
 public class Solution122 {

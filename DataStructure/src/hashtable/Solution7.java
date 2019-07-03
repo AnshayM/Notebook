@@ -31,6 +31,18 @@ public class Solution7 {
         return min;
 
     }
+    public static int firstUniqChar2(String s) {
+        if (s == null || "".equals(s)) {
+            return -1;
+        }
+        for (int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+            if (s.indexOf(ch) == s.lastIndexOf(ch)) {
+                return i;
+            }
+        }
+        return -1;
+    }
 
     public static int firstUniqChar1(String s) {
         Map<Character, Integer> map = new HashMap<>();
