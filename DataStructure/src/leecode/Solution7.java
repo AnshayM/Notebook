@@ -18,8 +18,6 @@ public class Solution7 {
     }
 
     public static int reverse(int x) {
-        int int_max = 0x7fffffff;
-        int int_min = 0x80000000;
         long result = 0;
         int temp = Math.abs(x);
         while (temp > 0) {
@@ -33,7 +31,7 @@ public class Solution7 {
     }
 
     /**
-     * 此方法有问题，数量大的时候整数的计算会不一样
+     * 此方法有问题，会造成越界
      *
      * @param x
      * @return
