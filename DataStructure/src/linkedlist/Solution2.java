@@ -1,10 +1,8 @@
 package linkedlist;
 
-import javafx.beans.binding.When;
 import util.ListNode;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 /**
