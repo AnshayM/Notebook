@@ -14,7 +14,8 @@ public class test {
         int i = 0;
         String s1 = a[i++];
         String s2 = a[++i];
-
+//        int num = "1234".indexOf(null);
+        int aa = 1;
     }
 
 }

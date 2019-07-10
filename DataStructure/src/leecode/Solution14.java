@@ -36,4 +36,27 @@ public class Solution14 {
         }
         return common;
     }
+
+    public static String longestCommonPrefix2(String[] strs) {
+        StringBuilder res = new StringBuilder();
+        if (strs == null || strs.length == 0) {
+            return res.toString();
+        } else if (strs.length == 1) {
+            return strs[0];
+        }
+        for (int i = 0; i < strs[0].length(); i++) {
+            char ch = strs[0].charAt(i);
+            for (int j = 1; j < strs.length; j++) {
+                // 超过长度或者指定位置不相同，则直接返回结果
+                if (i >= strs[j].length() || strs[j].charAt(i) != ch) {
+                    return res.toString();
+                }
+                // 遍历到最后一个，则把这个字母加进去
+                if (j == strs.length - 1) {
+                    res.append(ch);
+                }
+            }
+        }
+        return res.toString();
+    }
 }
