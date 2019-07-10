@@ -29,6 +29,7 @@ public class Solution7 {
             if (haystack.charAt(i) != needle.charAt(0)) {
                 while (++i < haystack.length() && haystack.charAt(i) != needle.charAt(0)) ;
             }
+            /*如果剩余从i开始的长度小于目标长度，则直接返回-1*/
             if (haystack.length() - i < needle.length()) {
                 return -1;
             }
