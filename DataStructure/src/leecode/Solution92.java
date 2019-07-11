@@ -7,6 +7,7 @@ import java.util.Stack;
 
 /**
  * 反转链表 II
+ * 反转从位置 m 到 n 的链表。请使用一趟扫描完成反转。
  * <p>
  * 思路：
  * 1先设置一个前驱节pre用来返回pre.next.
@@ -44,7 +45,7 @@ public class Solution92 {
             i++;
         }
 
-        // 到第m-1个节点(0则是前驱节点)
+        // 到第n-1个节点(0则是前驱节点)
         head = curNode;
         while (i <= n && curNode != null) {
             curNode = curNode.next;
@@ -66,7 +67,6 @@ public class Solution92 {
         ListNode dummyNode = new ListNode(-1);
         dummyNode.next = head;
         ListNode startNode = dummyNode;
-
         n -= m;
         m--;
         // 找到要更改的起始位置的上一个
@@ -77,7 +77,7 @@ public class Solution92 {
 
         ListNode curNode = startNode.next;
 
-        //相当于冒泡方法，一次一次把后面的接到startcode
+        //相当于冒泡方法，一次一次把后面的接到startcode。参见反转一个单链表Solution6
         while (n != 0) {
             ListNode tempNode = startNode.next;
             startNode.next = curNode.next;
