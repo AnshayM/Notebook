@@ -1,4 +1,4 @@
-package leecode;
+package leecode.easy;
 
 /**
  * 二叉树的最大深度
