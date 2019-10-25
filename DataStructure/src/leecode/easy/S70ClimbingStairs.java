@@ -28,7 +28,7 @@ package leecode.easy;
  * 思路：第N级=第N-1级+第N-2级，但是直接递归重复项太多，会造成超时
  * 所以为了节省资源，这里采用正向循环方式。(但是和斐波拉数列起始数不同)
  *
- * @author: machao
+ * @author: Anshay
  * @date: 2019/10/24
  */
 public class S70ClimbingStairs {
