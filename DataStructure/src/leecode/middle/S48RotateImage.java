@@ -13,7 +13,7 @@ import util.MyUtil;
  * @author: Anshay
  * @date: 2019/7/3
  */
-public class Solution48 {
+public class S48RotateImage {
     public static void main(String[] args) {
         int[][] n = new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
         rotate(n);

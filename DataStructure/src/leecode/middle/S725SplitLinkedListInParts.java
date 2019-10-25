@@ -14,7 +14,7 @@ import util.ListNode;
  * @author: Anshay
  * @date: 2019/5/22
  */
-public class Solution725 {
+public class S725SplitLinkedListInParts {
     public ListNode[] splitListToParts(ListNode root, int k) {
         return null;
     }
