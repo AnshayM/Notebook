@@ -20,7 +20,7 @@ import java.util.Arrays;
  * @author: Anshay
  * @date: 2019/7/4
  */
-public class Solution242 {
+public class S242ValidAnagram {
     public static void main(String[] args) {
         String s = "anagram";
         String t = "nagaram";

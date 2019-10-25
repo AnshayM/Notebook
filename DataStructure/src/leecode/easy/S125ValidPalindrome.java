@@ -10,7 +10,7 @@ package leecode.easy;
  * @author: Anshay
  * @date: 2019/7/4
  */
-public class Solution125 {
+public class S125ValidPalindrome {
     public static void main(String[] args) {
         isPalindrome("`l;`` 1o1 ??;l`");
     }
