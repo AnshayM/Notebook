@@ -20,7 +20,7 @@ package leecode.easy;
  * @author: Anshay
  * @date: 2019/10/12
  */
-public class Solution88 {
+public class S88MergeSortedArray {
 
     public void merge(int[] nums1, int m, int[] nums2, int n) {
         for (int i = m - 1, j = n - 1, k = m + n - 1; k >= 0 && j >= 0; k--) {

@@ -9,7 +9,7 @@ import java.util.List;
  * @author: Anshay
  * @date: 2019/10/24
  */
-public class Solution559 {
+public class S559MaximumDepthOfN_aryTree {
     public int maxDepth(Node root) {
         if (root == null) {
             return 0;

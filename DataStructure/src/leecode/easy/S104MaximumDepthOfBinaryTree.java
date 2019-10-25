@@ -10,7 +10,7 @@ package leecode.easy;
  * @author: Anshay
  * @date: 2019/4/22
  */
-public class Solution104 {
+public class S104MaximumDepthOfBinaryTree {
 
     public int maxDepth(TreeNode root) {
         if (root == null) {
