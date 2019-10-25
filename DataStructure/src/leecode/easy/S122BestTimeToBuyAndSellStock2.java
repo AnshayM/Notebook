@@ -11,7 +11,7 @@ package leecode.easy;
  * @author: Anshay
  * @date: 2019/7/1
  */
-public class Solution122 {
+public class S122BestTimeToBuyAndSellStock2 {
     public int maxProfit(int[] prices) {
         if (prices == null || prices.length <= 1) {
             return 0;
