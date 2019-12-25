@@ -15,9 +15,6 @@ juejin.im##DIV[class="extension"]
 www.w3cschool.cn##DIV[class="widget-main"]
 www.e-learn.cn##DIV[class="card bg-01"]
 www.jianshu.com##A[id="web-note-ad-fixed"]
-blog.csdn.net##DIV[class="right_box footer_box csdn-tracking-statistics"]
-blog.csdn.net##DIV[class="recommend-item-box recommend-ad-box"]
-blog.csdn.net##DIV[class="blog-expert"]
 juejin.im##DIV[class="sidebar-block app-download-sidebar-block shadow"]
 juejin.im##DIV[class="sidebar-block wechat-sidebar-block pure"]
 juejin.im##DIV[class="index-book-collect"]
@@ -25,4 +22,11 @@ mail.163.com##IFRAME[id="1554709464029_iframe"][src="//you.163.com/act/entry/4M9
 zhuanlan.zhihu.com##DIV[class="AdblockBanner"]
 mail.163.com##[title="免费课程"]
 mail.163.com##LI[id="_mail_component_144_144"][class="js-component-component gWel-mailInfo-item gWel-mailInfo-pinle gWel-mailInfo-err"]
+blog.csdn.net##DIV[class="csdn-tracking-statistics mb8 box-shadow"]
+blog.csdn.net##A[href="https://gitchat.csdn.net/activity/5c6cf6044bb44360f3370255?utm_source=t0626"]
+mail.163.com##DIV[class="mailApp"]
+blog.csdn.net##IMG[src="https://img-blog.csdnimg.cn/20191216172544126.png"]
+blog.csdn.net##DIV[class="blog-column-pay"]
 @@|http://www.ruanyifeng.com/blog/2019/05/weekly-issue-55.html|$document
+@@||www.ruanyifeng.com/$document
+@@|https://www.v2ex.com/t/615584|$document
