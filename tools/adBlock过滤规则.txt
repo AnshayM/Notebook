@@ -25,4 +25,13 @@ mail.163.com##IFRAME[id="1554709464029_iframe"][src="//you.163.com/act/entry/4M9
 zhuanlan.zhihu.com##DIV[class="AdblockBanner"]
 mail.163.com##[title="免费课程"]
 mail.163.com##LI[id="_mail_component_144_144"][class="js-component-component gWel-mailInfo-item gWel-mailInfo-pinle gWel-mailInfo-err"]
+blog.csdn.net##DIV[class="csdn-tracking-statistics mb8 box-shadow"]
+blog.csdn.net##IMG[src="https://img-blog.csdnimg.cn/20191216172544126.png"]
+blog.csdn.net##DIV[class="blog-column-pay"]
+www.imooc.com##DIV[class="redrain-redPacketsIMG"]
+mail.163.com##DIV[id="theme"]
+tool.lu##DIV[class="inner"]
+mail.163.com##[title="半个电台"]
 @@|http://www.ruanyifeng.com/blog/2019/05/weekly-issue-55.html|$document
+@@|http://scuseami.net/-81170VJNS/pBJ?$document
+@@||tool.lu/timestamp/^$document
