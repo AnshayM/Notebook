@@ -181,9 +181,9 @@ StringBuilder和StringBuffer，每次都会对对象本身进行操作，而不�
 #### 9.如何将字符串反转？
 考察StringBuilder的方法使用,自行查阅API并熟练。
 ```java
-String string="123";
-String reverse = new StringBuffer(string).reverse().toString();
-System.out.println("字符串反转前:"+string);// 字符串反转前:123
+String anshay.string="123";
+String reverse = new StringBuffer(anshay.string).reverse().toString();
+System.out.println("字符串反转前:"+anshay.string);// 字符串反转前:123
 System.out.println("字符串反转后:"+reverse);// 字符串反转后:321
 ```
 常用方法
