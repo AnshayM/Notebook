@@ -1,4 +1,4 @@
-package anshay.notebook.leecode;
+package anshay.notebook.leecode.unsolved;
 
 import anshay.notebook.util.ListNode;
 
