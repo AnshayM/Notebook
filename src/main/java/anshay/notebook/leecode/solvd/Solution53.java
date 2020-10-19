@@ -1,4 +1,4 @@
-package anshay.notebook.leecode.easy;
+package anshay.notebook.leecode.solvd;
 
 /**
  * 53. 最大子序和
