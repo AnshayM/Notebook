@@ -1,10 +1,12 @@
-package pers.anshay.notebook;
+package anshay.notebook.leecode.unsolved;
 
 /**
+ * 26. 删除排序数组中的重复项
+ *
  * @author machao
  * @date 2020/10/19
  */
-public class Test {
+public class Solution26 {
     public int removeDuplicates(int[] nums) {
         int course = 0;
         for (int i = 1; i < nums.length; i++) {
