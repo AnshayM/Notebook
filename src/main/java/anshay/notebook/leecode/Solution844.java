@@ -127,5 +127,29 @@ public class Solution844 {
         return true;
     }
 
+    /**
+     * 思路：遍历每个项，如果是负数，就直接比较当前值，正数才进行计算
+     *
+     * @param nums
+     * @return
+     */
+    public int maxSubArray(int[] nums) {
+        //记录最大的值
+        int res = nums[0];
+        int sum = 0;
+        for (int num : nums) {
+            if (num >= 0) {
+                sum += num;
+            } else {
+                //当出现num<0时，上一个已经是最大了且被记录了
+                sum = num;
+            }
+            res = Math.max(res, sum);
+        }
+
+
+        return 0;
+    }
+
 
 }
