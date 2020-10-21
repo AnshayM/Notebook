@@ -32,4 +32,26 @@ public class Test {
         ListNode slow = beforeHead;
 
     }
+
+    public static void main(String[] args) {
+        boolean longPressedName = isLongPressedName("vtkgn", "vttkgnn");
+        //"vtkgn"
+        // "vttkgnn"
+    }
+
+    public static boolean isLongPressedName(String name, String typed) {
+        int i = 0, j = 0;
+        while (j < typed.length()) {
+            if (i < name.length() && name.charAt(i) == typed.charAt(j)) {
+                i++;
+                j++;
+            } else if (j > 0 && typed.charAt(j) == typed.charAt(j - 1)) {
+                j++;
+            } else {
+                return false;
+            }
+        }
+        //执行完后i是加了1的
+        return i == name.length();
+    }
 }
