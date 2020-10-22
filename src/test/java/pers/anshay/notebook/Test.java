@@ -2,6 +2,9 @@ package pers.anshay.notebook;
 
 import anshay.notebook.util.ListNode;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author machao
  * @date 2020/10/19
@@ -53,5 +56,27 @@ public class Test {
         }
         //执行完后i是加了1的
         return i == name.length();
+    }
+
+    public List<Integer> partitionLabels(String S) {
+        //记录每个字母的最后下标
+        int[] last = new int[26];
+        int length = S.length();
+        //这一遍将最后出现的下标记录在了last数组里
+        for (int i = 0; i < length; i++) {
+            last[S.charAt(i) - 'a'] = i;
+        }
+        //记录长度列表的结果
+        List<Integer> list = new ArrayList<>();
+        int start = 0, end = 0;
+        for (int i = 0; i < length; i++) {
+            //更新当前片段的end值
+            end = Math.max(end, last[S.charAt(i) - 'a']);
+            if (i == end) {
+                list.add(end - start + 1);
+                start = end + 1;
+            }
+        }
+        return list;
     }
 }
