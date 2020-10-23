@@ -1,6 +1,8 @@
 package anshay.notebook.leecode.unsolved;
 
 /**
+ * 删除排序数组中的重复项 II
+ *
  * @author machao
  * @date 2020/10/19
  */

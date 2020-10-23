@@ -1,6 +1,6 @@
 package anshay.notebook.leecode.middle;
 
-import anshay.notebook.util.MyUtil;
+import anshay.notebook.common.util.MyUtil;
 
 /**
  * 旋转图像

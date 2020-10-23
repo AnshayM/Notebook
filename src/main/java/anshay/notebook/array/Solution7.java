@@ -1,7 +1,7 @@
 package anshay.notebook.array;
 
 
-import anshay.notebook.util.MyUtil;
+import anshay.notebook.common.util.MyUtil;
 
 /**
  * 实现strStr()

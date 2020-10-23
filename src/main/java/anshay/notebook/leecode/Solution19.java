@@ -1,6 +1,6 @@
 package anshay.notebook.leecode;
 
-import anshay.notebook.util.ListNode;
+import anshay.notebook.common.pojo.ListNode;
 
 import java.util.Stack;
 

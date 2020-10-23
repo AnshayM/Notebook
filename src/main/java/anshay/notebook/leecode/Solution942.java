@@ -1,6 +1,6 @@
 package anshay.notebook.leecode;
 
-import anshay.notebook.util.MyUtil;
+import anshay.notebook.common.util.MyUtil;
 
 /**
  * 增减字符串匹配
