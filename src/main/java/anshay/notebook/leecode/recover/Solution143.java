@@ -1,6 +1,7 @@
 package anshay.notebook.leecode.recover;
 
-import anshay.notebook.util.ListNode;
+import anshay.notebook.common.pojo.ListNode;
+import anshay.notebook.common.util.ListNodeUtil;
 
 /**
  * 143. 重排链表
@@ -36,67 +37,11 @@ public class Solution143 {
         if (head == null) {
             return;
         }
-        ListNode middle = getMiddle(head);
+        ListNode middle = ListNodeUtil.getMiddle(head);
         ListNode l2 = middle.next;
-        l2 = reverseListNode(l2);
+        l2 = ListNodeUtil.reverseListNode(l2);
         middle.next = null;
-        mergerList(head, l2);
+        ListNodeUtil.mergerList(head, l2);
     }
 
-    public ListNode getMiddle(ListNode head) {
-        ListNode fast = head;
-        ListNode slow = head;
-        while (fast.next != null && fast.next.next != null) {
-            slow = slow.next;
-            fast = fast.next.next;
-        }
-        return slow;
-    }
-
-    /**
-     * 第一步：
-     * pre  cur --   --
-     * null A   B    C
-     * <p>
-     * 循环一次后：
-     * --  pre -- cur
-     * null B   A   C
-     * ...
-     *
-     * @param head
-     * @return
-     */
-    public ListNode reverseListNode(ListNode head) {
-        ListNode cur = head;
-        ListNode pre = null;
-        while (cur != null) {
-            //暂存当前node的下一个
-            ListNode temp = cur.next;
-            //将前一个节点设置为当前节点的下一个
-            cur.next = pre;
-            //移动游标，当前节点成为下一轮的上一个节点，前面暂存的节点成为进行下一轮的当前节点
-            pre = cur;
-            cur = temp;
-        }
-        return pre;
-    }
-
-    /**
-     * 合并两个链表
-     *
-     * @param l1
-     * @param l2
-     */
-    void mergerList(ListNode l1, ListNode l2) {
-        ListNode temp1;
-        ListNode temp2;
-        while (l1 != null && l2 != null) {
-            temp1 = l1.next;
-            temp2 = l2.next;
-            l1.next = l2;
-            l2.next = temp1;
-            l1 = temp1;
-            l2 = temp2;
-        }
-    }
 }

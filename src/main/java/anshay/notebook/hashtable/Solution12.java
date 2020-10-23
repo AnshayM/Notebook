@@ -1,6 +1,6 @@
 package anshay.notebook.hashtable;
 
-import anshay.notebook.util.TreeNode;
+import anshay.notebook.common.TreeNode;
 
 import java.util.HashMap;
 import java.util.LinkedList;

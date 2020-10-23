@@ -1,7 +1,7 @@
 package anshay.notebook.linkedlist;
 
-import anshay.notebook.util.MyUtil;
-import anshay.notebook.util.ListNode;
+import anshay.notebook.common.util.MyUtil;
+import anshay.notebook.common.pojo.ListNode;
 
 /**
  * 回文链表
@@ -17,11 +17,11 @@ public class Solution8 {
     public static void main(String[] args) {
         ListNode node = new ListNode(-129);
         node.next = new ListNode(-129);
-        MyUtil.print(isPalindrome1(node));
+        MyUtil.print(isPalindrome(node));
 
     }
 
-    public static boolean isPalindrome1(ListNode head) {
+    public static boolean isPalindrome(ListNode head) {
         if (head == null || head.next == null) {
             return true;
         }
@@ -37,10 +37,13 @@ public class Solution8 {
             slow = next;
 
         }
+        //判断链表是奇数个还是偶数个，fast为null表示奇数个，slow的位置就是中心点；
+        //fast==null时表示偶数个，slow的下一个才是平分的后半段
         if (fast != null) {
             slow = slow.next;
         }
-        while (slow != null) {
+        //对两段进行比较
+        while (slow != null && pre != null) {
             if (slow.val != pre.val) {
                 return false;
             }
