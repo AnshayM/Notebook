@@ -1,39 +1,51 @@
 package pers.anshay.notebook;
 
 import anshay.notebook.common.pojo.ListNode;
-import anshay.notebook.common.util.ListNodeUtil;
 
 /**
  * @author machao
  * @date 2020/10/19
  */
 public class Test {
-    public boolean isPalindrome(ListNode head) {
+    public static void main(String[] args) {
+        ListNode head = new ListNode(1);
+        head.next = new ListNode(2);
+        head.next.next = new ListNode(2);
+        head.next.next.next = new ListNode(2);
+        head.next.next.next.next = new ListNode(1);
+        boolean palindrome = isPalindrome(head);
+
+    }
+
+    public static boolean isPalindrome(ListNode head) {
+        if (head == null || head.next == null) {
+            return true;
+        }
         //1。找到中间
         //2。将后面反序
         //3。进行比较
         ListNode middle = getMiddle(head);
         ListNode l2 = middle.next;
+        middle.next = null;
         if (l2 == null) {
             return true;
         }
-        l2 = reverse(middle);
-        return ListNodeUtil.diffListNode(head, l2);
+        l2 = reverse(l2);
+        return diffListNode(head, l2);
     }
 
 
-
-    ListNode getMiddle(ListNode node) {
+    static ListNode getMiddle(ListNode node) {
         ListNode fast = node;
         ListNode slow = node;
-        while (fast != null && fast.next != null) {
-            fast = node.next.next;
+        while (fast.next != null && fast.next.next != null) {
+            fast = fast.next.next;
             slow = slow.next;
         }
         return slow;
     }
 
-    ListNode reverse(ListNode node) {
+    static ListNode reverse(ListNode node) {
         ListNode pre = null;
         ListNode cur = node;
         while (cur != null) {
@@ -45,4 +57,14 @@ public class Test {
         return pre;
     }
 
+    public static boolean diffListNode(ListNode l1, ListNode l2) {
+        while (l1 != null && l2 != null) {
+            if (l1.val != l2.val) {
+                return false;
+            }
+            l1 = l1.next;
+            l2 = l2.next;
+        }
+        return true;
+    }
 }
