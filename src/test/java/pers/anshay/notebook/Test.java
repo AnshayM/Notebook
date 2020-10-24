@@ -1,70 +1,24 @@
 package pers.anshay.notebook;
 
-import anshay.notebook.common.pojo.ListNode;
+import java.util.Arrays;
 
 /**
  * @author machao
  * @date 2020/10/19
  */
 public class Test {
-    public static void main(String[] args) {
-        ListNode head = new ListNode(1);
-        head.next = new ListNode(2);
-        head.next.next = new ListNode(2);
-        head.next.next.next = new ListNode(2);
-        head.next.next.next.next = new ListNode(1);
-        boolean palindrome = isPalindrome(head);
-
-    }
-
-    public static boolean isPalindrome(ListNode head) {
-        if (head == null || head.next == null) {
-            return true;
-        }
-        //1。找到中间
-        //2。将后面反序
-        //3。进行比较
-        ListNode middle = getMiddle(head);
-        ListNode l2 = middle.next;
-        middle.next = null;
-        if (l2 == null) {
-            return true;
-        }
-        l2 = reverse(l2);
-        return diffListNode(head, l2);
-    }
-
-
-    static ListNode getMiddle(ListNode node) {
-        ListNode fast = node;
-        ListNode slow = node;
-        while (fast.next != null && fast.next.next != null) {
-            fast = fast.next.next;
-            slow = slow.next;
-        }
-        return slow;
-    }
-
-    static ListNode reverse(ListNode node) {
-        ListNode pre = null;
-        ListNode cur = node;
-        while (cur != null) {
-            ListNode temp = cur.next;
-            cur.next = pre;
-            pre = cur;
-            cur = temp;
-        }
-        return pre;
-    }
-
-    public static boolean diffListNode(ListNode l1, ListNode l2) {
-        while (l1 != null && l2 != null) {
-            if (l1.val != l2.val) {
-                return false;
+    public int videoStitching(int[][] clips, int T) {
+        int[] dp = new int[T + 1];
+        Arrays.fill(dp, Integer.MAX_VALUE - 1);
+        dp[0] = 0;
+        for (int i = 1; i <= T; i++) {
+            for (int[] clip : clips) {
+                //表示这个片段刚好是这个的开头（从0秒开始必须满足，不然后面就没了）
+                if (clip[0] < i && i <= clip[1]) {
+                    dp[i] = Math.min(dp[i], dp[clip[0]] + 1);
+                }
             }
-            l1 = l1.next;
-            l2 = l2.next;
         }
-        return true;
+        return dp[T] == Integer.MAX_VALUE - 1 ? -1 : dp[T];
     }
 }
