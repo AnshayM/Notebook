@@ -1,16 +1,32 @@
 package pers.anshay.notebook;
 
-import java.util.HashSet;
+import anshay.notebook.common.pojo.TreeNode;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author machao
  * @date 2020/10/19
  */
 public class Test {
-    public int videoStitching(int[][] clips, int T) {
-        HashSet<Integer> hashSet = new HashSet<>();
-        hashSet.add(8);
-        return 0;
+    public void videoStitching(int[][] clips, int T) {
+
+    }
+
+    public List<Integer> preorderTraversal(TreeNode root) {
+        List<Integer> list = new ArrayList<>();
+        preorderTraversal(root, list);
+        return list;
+    }
+
+    public void preorderTraversal(TreeNode root, List<Integer> list) {
+        if (root == null) {
+            return;
+        }
+        list.add(root.val);
+        preorderTraversal(root.left,list);
+        preorderTraversal(root.right, list);
     }
 
 }
