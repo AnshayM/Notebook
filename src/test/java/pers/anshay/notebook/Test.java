@@ -1,32 +1,36 @@
 package pers.anshay.notebook;
 
-import anshay.notebook.common.pojo.TreeNode;
+import anshay.notebook.common.pojo.ListNode;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.*;
 
 /**
  * @author machao
  * @date 2020/10/19
  */
 public class Test {
-    public void videoStitching(int[][] clips, int T) {
-
+    public static void main(String[] args) {
     }
 
-    public List<Integer> preorderTraversal(TreeNode root) {
-        List<Integer> list = new ArrayList<>();
-        preorderTraversal(root, list);
-        return list;
-    }
-
-    public void preorderTraversal(TreeNode root, List<Integer> list) {
-        if (root == null) {
-            return;
+    //思路，用一个长度
+    public boolean uniqueOccurrences(int[] arr) {
+        //0-2000
+        int[] cnt = new int[2001];
+        for (int i = 0; i < arr.length; i++) {
+            ++cnt[arr[i] + 1000];
         }
-        list.add(root.val);
-        preorderTraversal(root.left,list);
-        preorderTraversal(root.right, list);
+        Set<Integer> set = new HashSet<>();
+        for (int i : cnt) {
+            if (i == 0) {
+                continue;
+            }
+            if (!set.add(i)) {
+                return false;
+            }
+        }
+        return true;
     }
 
 }
