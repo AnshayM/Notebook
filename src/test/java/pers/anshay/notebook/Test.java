@@ -1,18 +1,16 @@
 package pers.anshay.notebook;
 
-import anshay.notebook.common.pojo.ListNode;
+import anshay.notebook.common.pojo.TreeNode;
 
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.*;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * @author machao
  * @date 2020/10/19
  */
 public class Test {
-    public static void main(String[] args) {
-    }
+
 
     //思路，用一个长度
     public boolean uniqueOccurrences(int[] arr) {
@@ -32,5 +30,9 @@ public class Test {
         }
         return true;
     }
+
+
+
+
 
 }
