@@ -1,6 +1,6 @@
 package anshay.notebook.leecode.easy;
 
-import anshay.notebook.util.MyUtil;
+import anshay.notebook.common.util.MyUtil;
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package anshay.notebook.util;
+package anshay.notebook.common.pojo;
 
 /**
  * @author: Anshay

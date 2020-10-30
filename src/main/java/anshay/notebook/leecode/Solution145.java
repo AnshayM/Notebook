@@ -1,5 +1,7 @@
 package anshay.notebook.leecode;
 
+import anshay.notebook.common.pojo.TreeNode;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,13 +31,4 @@ public class Solution145 {
         list.add(root.val);
     }
 
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
 }

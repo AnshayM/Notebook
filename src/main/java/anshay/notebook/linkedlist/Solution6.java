@@ -1,6 +1,6 @@
 package anshay.notebook.linkedlist;
 
-import anshay.notebook.util.ListNode;
+import anshay.notebook.common.pojo.ListNode;
 
 /**
  * 反转一个单链表。

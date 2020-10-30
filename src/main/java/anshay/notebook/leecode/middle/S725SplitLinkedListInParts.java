@@ -1,7 +1,7 @@
 package anshay.notebook.leecode.middle;
 
 
-import anshay.notebook.util.ListNode;
+import anshay.notebook.common.pojo.ListNode;
 
 /**
  * 分隔链表
