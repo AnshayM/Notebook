@@ -1,4 +1,4 @@
-package anshay.notebook.util;
+package anshay.notebook.common.pojo;
 
 /**
  * 自定义公用链表节点类
@@ -9,6 +9,12 @@ package anshay.notebook.util;
 public class ListNode {
     public int val;
     public ListNode next;
+
+    public ListNode(int val, ListNode next) {
+        this.val = val;
+        this.next = next;
+    }
+
 
     public ListNode() {
     }

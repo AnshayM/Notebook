@@ -1,6 +1,6 @@
 package anshay.notebook.string;
 
-import anshay.notebook.util.MyUtil;
+import anshay.notebook.common.util.MyUtil;
 
 /**
  * 报数

@@ -1,6 +1,6 @@
 package anshay.notebook.leecode;
 
-import anshay.notebook.util.MyUtil;
+import anshay.notebook.common.util.MyUtil;
 
 import java.util.HashSet;
 import java.util.Set;

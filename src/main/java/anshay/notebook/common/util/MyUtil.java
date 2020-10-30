@@ -1,4 +1,4 @@
-package anshay.notebook.util;
+package anshay.notebook.common.util;
 
 /**
  * 工具类

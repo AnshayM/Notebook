@@ -1,6 +1,6 @@
 package anshay.notebook.stackandqueen;
 
-import anshay.notebook.util.MyUtil;
+import anshay.notebook.common.util.MyUtil;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

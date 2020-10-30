@@ -1,6 +1,6 @@
-package anshay.notebook.leecode;
+package anshay.notebook.leecode.unsolved;
 
-import anshay.notebook.util.ListNode;
+import anshay.notebook.common.pojo.ListNode;
 
 /**
  * 删除链表中的节点
