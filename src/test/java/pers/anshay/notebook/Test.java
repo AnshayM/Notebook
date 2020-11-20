@@ -39,4 +39,33 @@ public class Test {
 
     }
 
+    public ListNode insertionSortList(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode dummyHead = new ListNode(-1, head);
+        ListNode lastSorted = head, curr = head.next;
+        while (curr != null) {
+            if (lastSorted.val <= curr.val) {
+                //满足顺序的，继续往后
+                lastSorted = lastSorted.next;
+            } else {
+                //不满足顺序，从第一个开始找位置
+                ListNode pre = dummyHead;
+                while (pre.next.val <= curr.val) {
+                    pre = pre.next;
+                }
+                //将断点后的接到之前的排序位置
+                lastSorted.next = curr.next;
+                curr.next = pre.next;
+                pre.next = curr;
+
+            }
+            curr = lastSorted.next;
+
+        }
+        return dummyHead.next;
+    }
+
+
 }
