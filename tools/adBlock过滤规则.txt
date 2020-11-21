@@ -32,8 +32,13 @@ www.imooc.com##DIV[class="redrain-redPacketsIMG"]
 mail.163.com##DIV[id="theme"]
 tool.lu##DIV[class="inner"]
 mail.163.com##[title="半个电台"]
+gitee.com##DIV[class="gitee-stars-main-widget pendan-widget"]
+www.liaoxuefeng.com##DIV[id="x-sidebar-left-bottom"]
+www.w3cschool.cn##DIV[id="topbanner"]
+www.jenkins.org.cn##ASIDE[id="custom_html-3"][class="widget_text widget widget_custom_html"]
+blog.csdn.net##A[class="toolbar-advert-default "]
+www.guanggoo.com##DIV[class="sidebox container-box mt10"]
 @@|http://www.ruanyifeng.com/blog/2019/05/weekly-issue-55.html|$document
 @@|http://scuseami.net/-81170VJNS/pBJ?$document
 @@||tool.lu/timestamp/^$document
-@@||www.ruanyifeng.com/$document
-@@|https://www.v2ex.com/t/615584|$document
+@@||jenkins.org.cn/821.html^$document
