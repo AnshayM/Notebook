@@ -3,7 +3,7 @@ package pers.anshay.notebook;
 import anshay.notebook.common.pojo.ListNode;
 
 import java.util.Arrays;
-import java.util.concurrent.ConcurrentHashMap;
+import java.util.TreeMap;
 
 /**
  * @author machao
@@ -67,5 +67,27 @@ public class Test {
         return dummyHead.next;
     }
 
+    public int longestSubarray(int[] nums, int limit) {
+        TreeMap<Integer, Integer> map = new TreeMap<>();
+        int left = 0, right = 0;
+        int res = 0;
+        while (right < nums.length) {
+            //初始化数据
+            map.put(nums[right], map.getOrDefault(nums[right], 0) + 1);
+            while (map.lastKey() - map.firstKey() > limit) {
+                //这里左窗口滑动
+                //对数值做数量判断
+                map.put(nums[left], map.get(nums[left]) - 1);
+                if (map.get(nums[left]) == 0) {
+                    map.remove(nums[left]);
+                }
+                //窗口左端右滑动
+                left++;
+            }
+            right++;
+            res = Math.max(res, right - left + 1);
+        }
+        return res;
+    }
 
 }
