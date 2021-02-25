@@ -1,9 +1,10 @@
-package anshay.notebook.array;
+package anshay.notebook.interview;
 
 import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * 167：有序数组的 Two Sum
  * 两数之和 II - 输入有序数组
  *
  * @author: Anshay
@@ -17,14 +18,16 @@ import java.util.Map;
  * <p>
  * 思路：使用hashMap,值做key，下标做value
  */
-public class Solution8 {
+public class Solution167 {
     public static void main(String[] args) {
         int[] t = new int[]{2, 7, 11, 15};
         int[] a = twoSum(t, 9);
 
     }
 
-    /*这里不用那么麻烦，直接两头并进就行*/
+    /**
+     * 直接两头并进就行
+     */
     public static int[] twoSum(int[] numbers, int target) {
         int i = 0;
         int j = numbers.length - 1;
@@ -40,6 +43,9 @@ public class Solution8 {
         return new int[]{-1, -1};
     }
 
+    /**
+     * 使用hashMap的方法，太麻烦了
+     */
     public static int[] twoSum1(int[] numbers, int target) {
         int[] res = new int[2];
         Map<Integer, Integer> map = new HashMap<>();
