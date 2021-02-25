@@ -1,4 +1,4 @@
-package anshay.notebook.learn.linkedlist;
+package anshay.notebook.interview.double_pointer;
 
 import anshay.notebook.common.pojo.ListNode;
 
@@ -6,12 +6,12 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * 环形链表
+ * 141 环形链表
  *
  * @author: Anshay
  * @date: 2019/5/17
  */
-public class Solution2 {
+public class Solution141 {
     public boolean hasCycle(ListNode head) {
         if (head == null || head.next == null) {
             return false;
