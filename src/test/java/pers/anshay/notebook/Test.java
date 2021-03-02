@@ -3,7 +3,9 @@ package pers.anshay.notebook;
 import anshay.notebook.common.pojo.ListNode;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.TreeMap;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @author machao
@@ -111,4 +113,54 @@ public class Test {
         }
     }
 
+    // public String findLongestWord(String s, List<String> dictionary) {
+    //     String longestStr = "";
+    //     for (String item : dictionary) {
+    //         if (longestStr.length() > item.length()
+    //                 || (longestStr.length() == item.length() && longestStr.compareTo(item) < 0)) {
+    //             continue;
+    //         }
+    //         if (isSubStr(s, item)) {
+    //             longestStr = item;
+    //         }
+    //     }
+    //     return longestStr;
+    // }
+    //
+    //
+    // public boolean isSubStr(String s, String t) {
+    //     int i = 0, j = 0;
+    //     //两个字符较长时，要比较偏移量和两字符长度差
+    //     while (i < s.length() && j < t.length()) {
+    //         if (s.charAt(i) == t.charAt(j)) {
+    //             j++;
+    //         }
+    //         i++;
+    //     }
+    //     return j == t.length();
+    // }
+
+    public String findLongestWord(String s, List<String> dictionary) {
+        String longestStr = "";
+        for (String item : dictionary) {
+            if (longestStr.length() >= item.length()) {
+                continue;
+            }
+            int i = 0, j = 0;
+            while (i < s.length() && j < item.length()) {
+                if (s.charAt(i) == item.charAt(j)) {
+                    j++;
+                }
+                i++;
+            }
+            if (j == item.length()) {
+                longestStr = item;
+            }
+        }
+        return longestStr;
+    }
+
+    public static void main(String[] args) {
+        ConcurrentHashMap map = null;
+    }
 }
