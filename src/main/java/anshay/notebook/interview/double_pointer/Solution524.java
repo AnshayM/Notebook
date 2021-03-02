@@ -33,28 +33,22 @@ public class Solution524 {
     public String findLongestWord(String s, List<String> dictionary) {
         String longestStr = "";
         for (String item : dictionary) {
-            int l1 = longestStr.length();
-            int l2 = item.length();
-            if (l1 > l2 || (l1 == l2 && longestStr.compareTo(item) < 0)) {
+            if (longestStr.length() > item.length()
+                    || (longestStr.length() == item.length() && longestStr.compareTo(item) < 0)) {
                 continue;
             }
-            if (isSubStr(s, item)) {
+            int i = 0, j = 0;
+            //两个字符较长时，要比较偏移量和两字符长度差
+            while (i < s.length() && j < item.length()) {
+                if (s.charAt(i) == item.charAt(j)) {
+                    j++;
+                }
+                i++;
+            }
+            if (j == item.length()) {
                 longestStr = item;
             }
         }
         return longestStr;
-    }
-
-
-    public boolean isSubStr(String s, String t) {
-        int i = 0, j = 0;
-        //两个字符较长时，要比较偏移量和两字符长度差
-        while (i < s.length() && j < t.length()) {
-            if (s.charAt(i) == t.charAt(j)) {
-                j++;
-            }
-            i++;
-        }
-        return j == t.length();
     }
 }
