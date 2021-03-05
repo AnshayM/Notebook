@@ -2,9 +2,7 @@ package pers.anshay.notebook;
 
 import anshay.notebook.common.pojo.ListNode;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.TreeMap;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -161,6 +159,10 @@ public class Test {
     }
 
     public static void main(String[] args) {
-        ConcurrentHashMap map = null;
+        HashMap map = new HashMap();
+        ConcurrentHashMap cmap = null;
+        List a = new ArrayList();
+        LinkedList b = new LinkedList();
+        Vector c = new Vector();
     }
 }
