@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
  * @author machao
  * @date 2020/10/14
  */
-// @RestController
-// @RequestMapping("/test")
 @RestController
 public class TestController {
     @ApiOperation("测试")
