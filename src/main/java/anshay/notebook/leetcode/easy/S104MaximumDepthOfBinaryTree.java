@@ -1,5 +1,7 @@
 package anshay.notebook.leetcode.easy;
 
+import anshay.notebook.common.pojo.TreeNode;
+
 /**
  * 二叉树的最大深度
  * <p>
@@ -18,16 +20,7 @@ public class S104MaximumDepthOfBinaryTree {
         }
         int leftLen = 1 + maxDepth(root.left);
         int rightLen = 1 + maxDepth(root.right);
-        return leftLen > rightLen ? leftLen : rightLen;
+        return Math.max(leftLen, rightLen);
     }
 
-    class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
 }

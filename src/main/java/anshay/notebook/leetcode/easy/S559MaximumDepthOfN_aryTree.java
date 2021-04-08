@@ -3,7 +3,7 @@ package anshay.notebook.leetcode.easy;
 import anshay.notebook.common.pojo.Node;
 
 /**
- * N叉树的最大深度
+ * N 叉树的最大深度
  * 参考104，2二叉树的最大深度
  *
  * @author: Anshay
@@ -17,7 +17,7 @@ public class S559MaximumDepthOfN_aryTree {
         int depth = 0;
         for (Node node : root.children) {
             int depth2 = maxDepth(node);
-            depth = depth >= depth2 ? depth : depth2;
+            depth = Math.max(depth, depth2);
         }
         return depth + 1;
     }
