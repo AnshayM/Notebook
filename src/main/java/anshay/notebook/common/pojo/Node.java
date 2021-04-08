@@ -1,15 +1,20 @@
 package anshay.notebook.common.pojo;
 
+import java.util.List;
+
 /**
  * @author: Anshay
  * @date: 2019/5/20
  */
 public class Node {
-    int key;
-    int value;
+    public int val;
+    public List<Node> children;
 
-    public Node(int key, int value) {
-        this.key = key;
-        this.value = value;
+    public Node() {
+    }
+
+    public Node(int _val, List<Node> _children) {
+        val = _val;
+        children = _children;
     }
 }

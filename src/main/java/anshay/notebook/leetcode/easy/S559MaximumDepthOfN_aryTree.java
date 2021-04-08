@@ -1,6 +1,6 @@
 package anshay.notebook.leetcode.easy;
 
-import java.util.List;
+import anshay.notebook.common.pojo.Node;
 
 /**
  * N叉树的最大深度
@@ -22,21 +22,6 @@ public class S559MaximumDepthOfN_aryTree {
         return depth + 1;
     }
 
-    /**
-     * 用到的node
-     */
-    class Node {
-        public int val;
-        public List<Node> children;
-
-        public Node() {
-        }
-
-        public Node(int _val, List<Node> _children) {
-            val = _val;
-            children = _children;
-        }
-    }
 
 }
 

@@ -1,10 +1,12 @@
 package anshay.notebook.leetcode;
 
+import anshay.notebook.common.pojo.Node;
+
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * N叉树的前序遍历
+ * 589 N 叉树的前序遍历
  * 给定一个 N 叉树，返回其节点值的前序遍历。
  * 中-左-右
  * <p>
@@ -27,19 +29,6 @@ public class Solution589 {
         list.add(root.val);
         for (Node node : root.children) {
             preorder(node, list);
-        }
-    }
-
-    class Node {
-        public int val;
-        public List<Node> children;
-
-        public Node() {
-        }
-
-        public Node(int _val, List<Node> _children) {
-            val = _val;
-            children = _children;
         }
     }
 
