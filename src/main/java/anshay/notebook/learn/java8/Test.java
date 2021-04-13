@@ -3,6 +3,7 @@ package anshay.notebook.learn.java8;
 import lombok.Builder;
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.DoubleFunction;
@@ -10,6 +11,7 @@ import java.util.function.Function;
 import java.util.function.IntPredicate;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 import static java.util.Comparator.comparingInt;
@@ -36,16 +38,25 @@ public class Test {
         list.sort(Comparator.comparing(Apple::getNum));
         List<Apple> filter = filter(list, (Apple v) -> "red".equals(v.getColor()));
 
+        //IntPredicate、IntStream 更具体的实现，指定了Int，对于基础类
+        // 解决了需要拆装箱的性能消耗
+        IntPredicate intPredicate = value -> {
+            return false;
+        };
+        IntStream intStream = list.stream().mapToInt(Apple::getNum);
+
+        //这样才可以直接使用sum方法
+        int sum = intStream.sum();
+        Integer reduce = list.stream().map(Apple::getNum)
+                .reduce(0, Integer::sum);
+        // list.stream().count()
+
         Predicate<Apple> redApple = v -> "red".equals(v.getColor());
         Predicate<Apple> and = redApple.and(v -> v.getColor() != null);
         Predicate<Apple> redAndHeavyAppleOrGreen =
                 redApple.and(a -> a.getWeight() > 150).or(a -> "green".equals(a.getColor()));
 
-        //IntPredicate 更具体的Predicate，指定了Int，对于基础类
-        // 需要拆装箱
-        IntPredicate intPredicate = value -> {
-            return false;
-        };
+
     }
 
     /**
@@ -158,6 +169,27 @@ public class Test {
                 .flatMap(Arrays::stream)
                 .distinct()
                 .collect(toList());
+
+        int a = 1;
+        //获取指定类型的流(1-100间的偶数)
+        IntStream range = IntStream.rangeClosed(0, 100).filter(v -> v % 2 == 0);
+        range.forEach(System.out::println);
+
+        IntStream intStream1 = IntStream.rangeClosed(1, 100)
+                .filter(b -> Math.sqrt(a * a + b * b) % 1 == 0);
+        Stream<Integer> boxed = IntStream.rangeClosed(1, 100)
+                .filter(b -> Math.sqrt(a * a + b * b) % 1 == 0).boxed();
+
+        Stream<int[]> stream = IntStream.rangeClosed(0, 100)
+                .mapToObj(b -> new int[]{a, b, (int) Math.sqrt(a * a + b * b)});
+
+        //由值创建流
+        Stream<Integer> integerStream = Stream.of(1, 2, 3);
+        Stream<? extends Serializable> stream1 = Stream.of("234", 234, 9.0);
+        Stream<Object> empty = Stream.empty();
+        Stream<String> stream2 = Arrays.stream(new String[]{"123", "424", "wqrw"});
+
+        Stream<Double> doubleStream = Stream.generate(Math::random).limit(5);
 
     }
 
