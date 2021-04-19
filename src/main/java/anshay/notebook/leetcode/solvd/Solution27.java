@@ -2,6 +2,7 @@ package anshay.notebook.leetcode.solvd;
 
 /**
  * 类似移除0-可跳过
+ * 27 移除元素
  *
  * @author machao
  * @date 2020/10/19

@@ -8,7 +8,6 @@ import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.DoubleFunction;
 import java.util.function.Function;
-import java.util.function.IntPredicate;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -23,7 +22,7 @@ import static java.util.stream.Collectors.toList;
  * @author machao
  * @date 2021/4/9
  */
-public class Test {
+public class Java8 {
 
 
     /**
@@ -34,13 +33,13 @@ public class Test {
         list.removeIf(v -> "red".equals(v.getColor()));
         // list.sort(Comparator.comparing((v1,v2) ->v1.getNum()- v2.getNum());
         list.sort(comparingInt(Apple::getNum));
-        list.sort(comparingInt(Apple::getNum).reversed());
-        list.sort(Comparator.comparing(Apple::getNum));
+        list.sort(Comparator.comparing(Apple::getNum).reversed());
+        list.sort(Comparator.comparing(v -> v.getNum()));
         List<Apple> filter = filter(list, (Apple v) -> "red".equals(v.getColor()));
 
         //IntPredicate、IntStream 更具体的实现，指定了Int，对于基础类
         // 解决了需要拆装箱的性能消耗
-        IntPredicate intPredicate = value -> {
+        Predicate intPredicate = v -> {
             return false;
         };
         IntStream intStream = list.stream().mapToInt(Apple::getNum);
@@ -59,20 +58,6 @@ public class Test {
 
     }
 
-    /**
-     * 代码参数化过滤方法
-     */
-    public static <T> List<T> filter(List<T> list, Predicate<T> p) {
-        list.removeIf(p);
-        List<T> result = new ArrayList<>();
-        for (T e : list) {
-            if (p.test(e)) {
-                result.add(e);
-            }
-        }
-        return result;
-
-    }
 
     /**
      * 排序
@@ -106,14 +91,6 @@ public class Test {
         return (f.apply(a) + f.apply(b)) * (b - a) / 2.0;
     }
 
-    @Builder
-    @Data
-    public static class Apple {
-        private String name;
-        private double weight;
-        private String color;
-        private int num;
-    }
 
     public static void main(String[] args) {
         List<Apple> list = new ArrayList<>();
@@ -196,6 +173,57 @@ public class Test {
     private static <T> Predicate<T> distinctByKey(Function<? super T, ?> keyExtractor) {
         Set<Object> seen = ConcurrentHashMap.newKeySet();
         return t -> seen.add(keyExtractor.apply(t));
+    }
+
+    /*这里仅为个人记录，比较基础的概念不再描述，请参考书籍《java8实战》*/
+
+    /**
+     * 内部样例类
+     */
+    @Builder
+    @Data
+    public static class Apple {
+        private String name;
+        private double weight;
+        private String color;
+        private int num;
+    }
+
+    /**
+     * 第2章 通过行为参数传递代码
+     */
+    public void chapter2() {
+        List<Apple> list = new ArrayList<>();
+
+        //行为参数化->将筛选行为作为一个Predicate<T>参数传递给函数
+        List<Apple> filter = filter(list, (Apple v) -> "red".equals(v.getColor()));
+
+        list.sort(Comparator.comparing(Apple::getNum));
+        list.sort((v1, v2) -> v1.getName().compareToIgnoreCase(v2.getName()));
+
+
+    }
+
+    /**
+     * 代码参数化过滤方法
+     */
+    public static <T> List<T> filter(List<T> list, Predicate<T> p) {
+        // list.removeIf(p);
+        List<T> result = new ArrayList<>();
+        for (T e : list) {
+            if (p.test(e)) {
+                result.add(e);
+            }
+        }
+        return result;
+    }
+
+
+    /**
+     * 第6章用流收集数据
+     */
+    public void chapter6() {
+
     }
 
 
