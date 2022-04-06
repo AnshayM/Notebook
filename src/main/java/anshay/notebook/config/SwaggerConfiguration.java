@@ -32,7 +32,7 @@ public class SwaggerConfiguration {
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder().title("接口文档")
                 .description("api文档")
-                .contact(new Contact("值班界面", "https://cn.bing.com/", null))
+                .contact(new Contact("跳转界面", "https://cn.bing.com/", null))
                 .version("1.0")
                 .build();
     }
