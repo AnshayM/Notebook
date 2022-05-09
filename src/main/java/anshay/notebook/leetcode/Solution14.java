@@ -17,6 +17,10 @@ public class Solution14 {
         System.out.println(s);
     }
 
+    /**纵向比较时，只需要比较对应i位置的字符即可，不用比较startsWith，startsWith把前面的都比较了一遍
+     * @param strs
+     * @return
+     */
     public static String longestCommonPrefix(String[] strs) {
         String common = "";
         String temp;
@@ -27,8 +31,8 @@ public class Solution14 {
         }
         for (int i = 0; i < strs[0].length(); i++) {
             temp = strs[0].substring(0, i + 1);
-            for (int j = 0; j < strs.length; j++) {
-                if (!strs[j].startsWith(temp)) {
+            for (String str : strs) {
+                if (!str.startsWith(temp)) {
                     return common;
                 }
             }
