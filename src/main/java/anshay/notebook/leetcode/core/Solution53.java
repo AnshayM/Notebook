@@ -1,7 +1,7 @@
-package anshay.notebook.leetcode.solvd;
+package anshay.notebook.leetcode.core;
 
 /**
- * 53. 最大子序和
+ * 53. 最大子数组和
  * <p>
  * 这是一道动态规划的题目
  * 简单思路：遍历数组，然后计算每一步的sum，每一步取较大者更新sum，如果上一次的sum<=0,则直接取num比较即可。
