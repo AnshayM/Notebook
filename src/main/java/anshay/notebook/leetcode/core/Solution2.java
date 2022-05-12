@@ -1,4 +1,4 @@
-package anshay.notebook.learn.linkedlist;
+package anshay.notebook.leetcode.core;
 
 import anshay.notebook.common.pojo.ListNode;
 
@@ -12,7 +12,7 @@ import anshay.notebook.common.pojo.ListNode;
  * @author: Anshay
  * @date: 2019/5/21
  */
-public class Solution9 {
+public class Solution2 {
     public static void main(String[] args) {
         ListNode node1 = new ListNode(2);
         node1.next = new ListNode(4);

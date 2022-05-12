@@ -1,4 +1,4 @@
-package anshay.notebook.learn.array;
+package anshay.notebook.leetcode.core;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -14,6 +14,10 @@ import java.util.Map;
  * @date: 2019/4/30
  */
 public class Solution1 {
+    public static void main(String[] args) {
+        System.out.println("123");
+
+    }
     public int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
@@ -22,7 +26,6 @@ public class Solution1 {
 
         for (int i = 0; i < nums.length; i++) {
             Integer j = map.get(target - nums[i]);
-            /*避免元素是目标值一半的情况 */
             if (j != null && j != i) {
                 return new int[]{i, j};
             }

@@ -1,18 +1,18 @@
-package anshay.notebook.interview.double_pointer;
+package anshay.notebook.leetcode.core;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 /**
- * 15 三数之合
+ * 5 三数之合
  * 给你一个包含 n 个整数的数组nums，判断nums中是否存在三个元素 a，b，c ，使得a + b + c = 0 ？请你找出所有和为 0 且不重复的三元组。
  * 注意：答案中不可以包含重复的三元组。
  *
  * @author machao
  * @date 2021/2/28
  */
-public class Solution15 {
+public class Solution5 {
     public List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
         if (nums == null || nums.length < 3) {
@@ -20,14 +20,16 @@ public class Solution15 {
         }
         Arrays.sort(nums);
         for (int i = 0; i < nums.length; i++) {
-            //最小的必须是非正数才可以得到和为0
+            //最小的必须是非正数才可以得到和为0;如果等于0，满足条件
             if (nums[i] > 0) {
                 break;
             } else if (i > 0 && nums[i] == nums[i - 1]) {
                 //去重
                 continue;
             }
+            // 当前位下一个
             int l = i + 1;
+            // 最后一个
             int r = nums.length - 1;
             while (l < r) {
                 int sum = nums[i] + nums[l] + nums[r];

@@ -1,4 +1,4 @@
-package anshay.notebook.learn.hashtable;
+package anshay.notebook.leetcode.core;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -13,7 +13,7 @@ import java.util.Map;
  * @author: Anshay
  * @date: 2019/5/27
  */
-public class Solution13 {
+public class Solution3 {
     public static void main(String[] args) {
         String s = "abba";
         int res = lengthOfLongestSubstring(s);
@@ -26,12 +26,13 @@ public class Solution13 {
         if (s.length() == 1) {
             return 1;
         }
-        Map<Character, Integer> map = new HashMap();
+        Map<Character, Integer> map = new HashMap<>();
         int max = 0;
         int left = 0;
         for (int i = 0; i < s.length(); i++) {
             if (map.containsKey(s.charAt(i))) {
                 /*left是上一个重复字符位置，下一个可能在前面，所以要取大*/
+                /*加1表示新字符串是从这个重复的下一个开始的*/
                 left = Math.max(left, map.get(s.charAt(i)) + 1);
             }
             map.put(s.charAt(i), i);
