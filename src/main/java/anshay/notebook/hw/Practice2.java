@@ -1,5 +1,11 @@
 package anshay.notebook.hw;
 
+import org.apache.commons.lang3.StringUtils;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
 /**
  * 通过键盘输入一串小写字母(a~z)组成的字符串。请编写一个字符串压缩程序，将字符串中连续出席的重复字母进行压缩，并输出压缩后的字符串。
  * 压缩规则：
@@ -10,4 +16,22 @@ package anshay.notebook.hw;
  * @date 2022/5/13
  */
 public class Practice2 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		while (sc.hasNext()) {
+			String a = sc.nextLine();
+			StringFilter(a);
+
+		}
+	}
+
+	private static String  StringFilter(String a) {
+		// 用来计算是否出现过
+		if (StringUtils.isBlank(a)) {
+			return a;
+		}
+		StringBuilder sb = new StringBuilder();
+
+		return null;
+	}
 }
