@@ -21,16 +21,43 @@ CPU资源在不同线程中转换需要修改上下文状态。这个操作时�
 ![](https://img-blog.csdnimg.cn/2018112210212894.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2F4aWFvYm9nZQ==,size_16,color_FFFFFF,t_70)
 
 #### 3无锁 VS 偏向锁 VS 轻量级锁 VS 重量级锁
-以上时synchronized的四种状态。
+以上是synchronized的四种状态，级别从低到高。
 ![synchronized的四种状态](https://img-blog.csdnimg.cn/2018112210411172.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2F4aWFvYm9nZQ==,size_16,color_FFFFFF,t_70)
 
-1.6之前，synchronized频繁切换上下文状态耗时长，1.6改为自旋锁并引入了偏向锁和轻量级锁。然后由锁的竞争状态，设置为不同的锁状态。
 
-- 无锁：不对资源锁定，都可以访问，但同时只有一个线程能修改成功。
-特点修改操作在循环中进行，不断CAS实现。
+这里引入两个概念，java对象头和Moitor
+
+**java对象头**
+HotSpot对象头包括MarkWord(标记字段)、Klass Pointer(类型指针)。
+Mark Word: 默认存储对象的HashCode、分代年龄和锁标志为信息。
+Klass Point: 对象指向它的类元数据的指针，虚拟机通过这个指针来确定这个类是哪个类的实现。
+
+**Monitor**：
+	是一个同步工具/同步机制，通常描述为一个对象。每个java对象都有一个内部锁或者Monitor锁。
+monitor是线程私有的数据结构，每个线程又一个可用monitor record列表以及一个全局的可用列表。每一个被锁的对象都会和一个monitor关联，同时monitor中又一个Owner记录拥有该锁对应的线程id。
+
+synchronized通过monitor来实现线程同步，monitor依赖底层的操作系统的Mutex Lock(互斥锁)来实现线程同步。
+1.6之前，synchronized频繁切换上下文状态，耗时长，就是JDK6之前效率低的原因。这种依赖底层Mutex Lock实现的锁称为“重量级锁”。JDK6为了减少获得锁和释放锁带来的性能消耗，引入了“偏向锁”和“轻量级锁”
+
+
+
+- 无锁：不对资源锁定，都可以访问，但同时只有一个线程能修改成功。其他失败的线程会不断重试到成功为止。
+
+  CAS原理及应用就是无锁的实现。无法全面代替有锁，但在某些场合性能高。
+
 - 偏向锁： 一段同步代码一直被一个线程访问，那么该线程自动获取锁，降低获取锁的代价。
-当一个线程访问同步代码块获取锁时，会在对象头里保存这个线程id。
-偏向锁可以在无多线程竞争的情况下尽量减少不必要的轻量级锁执行操作，轻量级锁的获取和释放依赖多次CAS院子操作，偏向锁只需要在置换ThreadId时依赖一次CAS原子指令即可。
+  当一个线程访问同步代码块获取锁时，会在对象头里保存这个线程id。
+  偏向锁可以在无多线程竞争的情况下尽量减少不必要的轻量级锁执行操作，轻量级锁的获取和释放依赖多次CAS院子操作，偏向锁只需要在置换ThreadId时依赖一次CAS原子指令即可。
+
+- 轻量级锁：
+
+- 
+
+![四种状态扭转](https://s3.bmp.ovh/imgs/2022/05/17/bf94d316e25fdb5c.jpeg)
+
+
+
+![synchronized原理](https://i.bmp.ovh/imgs/2022/05/17/4c9d6753d671b1ee.png)
 
 
 
