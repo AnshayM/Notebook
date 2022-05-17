@@ -18,7 +18,7 @@ public class Solution63 {
 			for (int j = 0; j < n; j++) {
 				if (obstacleGrid[i][j] == 1) {
 					column[j] = 0;
-					// 因为遇到障碍，该行结束
+					//遇到障碍，该行结束
 					continue;
 				}
 				if (j - 1 >= 0 && obstacleGrid[i][j - 1] == 0) {
