@@ -1,6 +1,5 @@
 # java中各种锁的介绍
 
-
 [原文](https://www.cnblogs.com/jyroy/p/11365935.html)
 
 
@@ -21,9 +20,45 @@ CPU资源在不同线程中转换需要修改上下文状态。这个操作时�
 
 ![](https://img-blog.csdnimg.cn/2018112210212894.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2F4aWFvYm9nZQ==,size_16,color_FFFFFF,t_70)
 
-#### 无锁 VS 偏向锁 VS 轻量级锁 VS 重量级锁
+#### 3无锁 VS 偏向锁 VS 轻量级锁 VS 重量级锁
 以上时synchronized的四种状态。
-
 ![synchronized的四种状态](https://img-blog.csdnimg.cn/2018112210411172.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2F4aWFvYm9nZQ==,size_16,color_FFFFFF,t_70)
 
-![img.png](img.png)
+1.6之前，synchronized频繁切换上下文状态耗时长，1.6改为自旋锁并引入了偏向锁和轻量级锁。然后由锁的竞争状态，设置为不同的锁状态。
+
+- 无锁：不对资源锁定，都可以访问，但同时只有一个线程能修改成功。
+特点修改操作在循环中进行，不断CAS实现。
+- 偏向锁： 一段同步代码一直被一个线程访问，那么该线程自动获取锁，降低获取锁的代价。
+当一个线程访问同步代码块获取锁时，会在对象头里保存这个线程id。
+偏向锁可以在无多线程竞争的情况下尽量减少不必要的轻量级锁执行操作，轻量级锁的获取和释放依赖多次CAS院子操作，偏向锁只需要在置换ThreadId时依赖一次CAS原子指令即可。
+
+
+
+
+#### 4.公平锁VS非公平锁
+公平锁：
+多个线程按照申请顺序获取锁，现在直接进入队列中排队。
+优点是等待锁的线程不会饿死，缺点是吞吐效率低。开销大。
+
+非公平锁：
+多个线程加锁时，不按顺序，直接抢占式获取锁。
+优点是减少唤起线程的开销，吞吐高。缺点是等待队列的线程可能会饿死或者等待很久。
+
+
+公平锁和非公平锁的源码实现区别只在于公平锁在获取同步状态时多路一个限制条件 ```hasQueuedPredecessors()```，用于判断当前线程是否处于队列的的第一个。
+
+
+#### 5.可重入锁VS非可重入锁
+可重入锁又名递归锁，同一线程在外层方法获取锁的时候，在进入该线程的内部方法会自动获取锁。 
+Synchronized和ReentrantLock都是可重入锁。优点是可在一定程度上避免死锁。
+
+
+#### 6.独享锁和共享锁
+**独享锁**，又叫排他锁，一次只能被一个线程拥有
+
+**共享锁**，该锁可以被多个线程持有。线程T对数据A加上共享锁后，其他线程只能对A加共享锁，不能加排他锁。可以获取共享锁的线程只能**读数据**，不能修改数据
+
+独享锁和共享锁都是通过AQS来实现的，通过实现不同的方法，来实现独享或者共享。
+
+#### synchronized的底层实现
+后续补充
