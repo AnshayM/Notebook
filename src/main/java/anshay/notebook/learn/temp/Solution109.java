@@ -1,6 +1,6 @@
 package anshay.notebook.learn.temp;
 
-import anshay.notebook.common.pojo.ListNode;
+import anshay.notebook.common.bo.ListNode;
 
 /**
  * 有序链表转换二叉搜索树

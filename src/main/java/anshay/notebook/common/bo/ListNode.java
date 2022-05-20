@@ -1,4 +1,4 @@
-package anshay.notebook.common.pojo;
+package anshay.notebook.common.bo;
 
 /**
  * 自定义公用链表节点类

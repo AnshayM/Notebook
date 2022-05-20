@@ -1,7 +1,7 @@
 package anshay.notebook.algorithm.leetcode.middle;
 
 
-import anshay.notebook.common.pojo.ListNode;
+import anshay.notebook.common.bo.ListNode;
 
 /**
  * 分隔链表

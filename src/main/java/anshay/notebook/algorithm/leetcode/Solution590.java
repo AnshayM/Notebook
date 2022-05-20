@@ -1,6 +1,6 @@
 package anshay.notebook.algorithm.leetcode;
 
-import anshay.notebook.common.pojo.Node;
+import anshay.notebook.common.bo.Node;
 
 import java.util.ArrayList;
 import java.util.List;

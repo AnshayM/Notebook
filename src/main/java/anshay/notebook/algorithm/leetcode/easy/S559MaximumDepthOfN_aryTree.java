@@ -1,6 +1,6 @@
 package anshay.notebook.algorithm.leetcode.easy;
 
-import anshay.notebook.common.pojo.Node;
+import anshay.notebook.common.bo.Node;
 
 /**
  * N 叉树的最大深度

@@ -1,7 +1,7 @@
 package anshay.notebook.learn.linkedlist;
 
 import anshay.notebook.common.util.MyUtil;
-import anshay.notebook.common.pojo.ListNode;
+import anshay.notebook.common.bo.ListNode;
 
 /**
  * 回文链表

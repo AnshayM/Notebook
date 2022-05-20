@@ -1,4 +1,4 @@
-package anshay.notebook.common.pojo;
+package anshay.notebook.common.bo;
 
 import java.util.List;
 

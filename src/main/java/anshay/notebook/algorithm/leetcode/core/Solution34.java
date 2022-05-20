@@ -1,6 +1,6 @@
 package anshay.notebook.algorithm.leetcode.core;
 
-import anshay.notebook.common.pojo.TreeNode;
+import anshay.notebook.common.bo.TreeNode;
 
 import java.util.Deque;
 import java.util.LinkedList;

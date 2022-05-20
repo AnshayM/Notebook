@@ -1,6 +1,6 @@
 package anshay.notebook.algorithm.leetcode;
 
-import anshay.notebook.common.pojo.TreeNode;
+import anshay.notebook.common.bo.TreeNode;
 
 /**
  * 129. 求根到叶子节点数字之和

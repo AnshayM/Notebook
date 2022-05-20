@@ -1,6 +1,6 @@
 package anshay.notebook.interview.double_pointer;
 
-import anshay.notebook.common.pojo.ListNode;
+import anshay.notebook.common.bo.ListNode;
 
 import java.util.HashSet;
 import java.util.Set;

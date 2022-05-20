@@ -1,6 +1,6 @@
 package anshay.notebook.algorithm.leetcode.core;
 
-import anshay.notebook.common.pojo.ListNode;
+import anshay.notebook.common.bo.ListNode;
 
 /**
  * 两数相加

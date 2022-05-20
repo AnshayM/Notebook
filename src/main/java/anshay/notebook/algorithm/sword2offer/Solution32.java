@@ -1,6 +1,6 @@
 package anshay.notebook.algorithm.sword2offer;
 
-import anshay.notebook.common.pojo.TreeNode;
+import anshay.notebook.common.bo.TreeNode;
 
 import java.util.Deque;
 import java.util.LinkedList;

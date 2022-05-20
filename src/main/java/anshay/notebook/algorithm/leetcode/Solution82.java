@@ -1,6 +1,6 @@
 package anshay.notebook.algorithm.leetcode;
 
-import anshay.notebook.common.pojo.ListNode;
+import anshay.notebook.common.bo.ListNode;
 
 /**
  * 删除排序链表中的重复元素 II

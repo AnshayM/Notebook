@@ -1,6 +1,6 @@
 package anshay.notebook.learn.linkedlist;
 
-import anshay.notebook.common.pojo.ListNode;
+import anshay.notebook.common.bo.ListNode;
 
 import java.util.HashMap;
 import java.util.Map;

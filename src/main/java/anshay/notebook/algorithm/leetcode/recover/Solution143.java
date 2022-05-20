@@ -1,6 +1,6 @@
 package anshay.notebook.algorithm.leetcode.recover;
 
-import anshay.notebook.common.pojo.ListNode;
+import anshay.notebook.common.bo.ListNode;
 import anshay.notebook.common.util.ListNodeUtil;
 
 /**

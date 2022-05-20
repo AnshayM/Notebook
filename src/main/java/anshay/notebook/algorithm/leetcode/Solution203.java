@@ -1,6 +1,6 @@
 package anshay.notebook.algorithm.leetcode;
 
-import anshay.notebook.common.pojo.ListNode;
+import anshay.notebook.common.bo.ListNode;
 
 /**
  * 移除链表元素

@@ -1,7 +1,7 @@
 package anshay.notebook.algorithm.leetcode;
 
 
-import anshay.notebook.common.pojo.ListNode;
+import anshay.notebook.common.bo.ListNode;
 
 /**
  * 合并两个有序链表

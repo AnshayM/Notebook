@@ -1,6 +1,6 @@
 package anshay.notebook.common.util;
 
-import anshay.notebook.common.pojo.ListNode;
+import anshay.notebook.common.bo.ListNode;
 
 /**
  * @author machao
