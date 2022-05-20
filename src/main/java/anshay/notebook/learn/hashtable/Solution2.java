@@ -1,7 +1,6 @@
 package anshay.notebook.learn.hashtable;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 /**
  * 只出现一次的数字
@@ -23,7 +22,7 @@ public class Solution2 {
         int res = nums[0];
         for (int i = 1; i < nums.length; i++) {
             /*^表示位异或，相同为0，不同为1。交换律可知每一位最后都只剩下单独的那一个的值*/
-            res = res ^ nums[i];
+            res ^= nums[i];
         }
         return res;
     }
