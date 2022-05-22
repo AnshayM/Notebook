@@ -1,9 +1,7 @@
 import anshay.notebook.common.bo.ListNode;
 import anshay.notebook.common.bo.TreeNode;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @author machao
@@ -137,5 +135,77 @@ public class Test {
 			}
 		}
 		return count;
+	}
+
+	public int[] twoSum(int[] nums, int target) {
+
+		HashMap<Integer, Integer> map = new HashMap<>();
+
+		for (int i = nums.length - 1; i >= 0; i--) {
+			map.put(nums[i], i);
+		}
+		for (int i = 0; i < nums.length; i++) {
+			Integer integer = map.get(nums[i]);
+			if (integer != i) {
+				return new int[]{integer, i};
+			}
+
+		}
+		return nums;
+	}
+
+	public int[] twoSumII(int[] numbers, int target) {
+		// 这个是说明了没有重复项目
+		int l = 0, r = numbers.length - 1;
+		while (l < r) {
+			if (numbers[l] + numbers[r] < target) {
+				l++;
+			} else if (numbers[l] + numbers[r] > target) {
+				r--;
+			} else {
+				return new int[]{l + 1, r + 1};
+			}
+		}
+		return new int[]{-1, -1};
+
+	}
+
+	public int sumNums(int n) {
+		boolean b = n > 0 && (n += sumNums(n - 1)) > 0;
+		return n;
+	}
+
+	public List<List<Integer>> threeSum(int[] nums) {
+		// 先排序，然后对一个for后变2数之和,等于0，则 -A= B+C
+		// 在针对A的循环中，如果相等，继续往后找值，可能会有重复值
+		List<List<Integer>> res = new ArrayList<>();
+		if (nums == null || nums.length < 3) {
+			return res;
+		}
+		Arrays.sort(nums);
+		for (int i = 0; i < nums.length; i++) {
+			if (nums[i] > 0) {
+				break;
+			} else if (i >= 1 && nums[i] == nums[i - 1]) {
+				continue;
+			}
+			int l = i + 1, r = nums.length - 1;
+			while (l < r) {
+				int sum = nums[i] + nums[l] + nums[r];
+				if (sum == 0) {
+					res.add(Arrays.asList(nums[i], nums[l], nums[r]));
+					// 去重复
+					while (l < r && nums[l] == nums[l + 1]) l++;
+					while (l < r && nums[r] == nums[r - 1]) r--;
+					l++;
+					l--;
+				} else if (sum < 0) {
+					l++;
+				} else {
+					r--;
+				}
+			}
+		}
+		return res;
 	}
 }
