@@ -1,5 +1,7 @@
 package anshay.notebook.algorithm.leetcode.easy;
 
+import java.util.concurrent.locks.ReentrantLock;
+
 /**
  * 70.爬楼梯
  * 假设你正在爬楼梯。需要 n阶你才能到达楼顶。
@@ -38,6 +40,8 @@ public class S70ClimbingStairs {
     }
 
     public static int climbStairs(int n) {
+        ReentrantLock lock = null;
+
         if (n <= 2) {
             return n;
         }
@@ -49,5 +53,6 @@ public class S70ClimbingStairs {
             f1 = temp;
         }
         return f2;
+
     }
 }

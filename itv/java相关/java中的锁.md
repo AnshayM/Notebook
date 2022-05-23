@@ -102,3 +102,16 @@ Synchronized和ReentrantLock都是可重入锁。优点是可在一定程度上�
 2，请求与保持：一个线程因请求资源而阻塞时，已经获取的资源保持不放
 3，不剥夺条件：线程已经获得的资源，在使用完之前，不能强行剥夺
 4，循环等待条件：多个线程之间形成一种头尾相连的循环等待资源关系
+
+
+
+#### 8.synchronized和ReenterantLock的区别
+
+synchronized是关键字，ReenterantLock是类。
+ReenterantLock可以被继承，可以有方法和变量，提供了更多的接口。
+
+1. ReenterantLock可以对锁的等待时间进行配置，可以避免死锁
+2. ReenterantLock可以获得锁的各种信息
+3. ReenterantLock可以实现锁的多路通知
+
+底层实现上，ReenterantLock调用的unsafe的park方法加锁。synchronized是通过底层的monitor对象,操作对象头的mark word来进行操作的。

@@ -1,3 +1,5 @@
+package anshay.notebook.algorithm;
+
 import anshay.notebook.common.bo.ListNode;
 import anshay.notebook.common.bo.TreeNode;
 
@@ -208,4 +210,61 @@ public class Test {
 		}
 		return res;
 	}
+
+	/**
+	 * 递归-耗时多
+	 *
+	 * @param n
+	 * @return
+	 */
+	public int climbStairs(int n) {
+		int f1 = 1, f2 = 2;
+		if (n == 1) {
+			return f1;
+		}
+		if (n == 2) {
+			return f2;
+		}
+		for (int i = 2; i < n; i++) {
+			int tem = f2;
+			f2 += f1;
+			f1 = tem;
+		}
+		return f2;
+	}
+
+	public ListNode mergeNodes(ListNode head) {
+		ListNode resHead = new ListNode();
+		ListNode resCur = new ListNode();
+		resHead.next = resCur;
+
+		ListNode curr = head.next;
+		while (curr != null) {
+			if (curr.val != 0) {
+				resCur.val += curr.val;
+			} else if (curr.next != null) {
+				resCur.next = new ListNode();
+				resCur = resCur.next;
+			}
+			curr = curr.next;
+		}
+		return resHead.next;
+	}
+
+	public int numIdenticalPairs(int[] nums) {
+		Map<Integer, Integer> map = new HashMap<>();
+		for (int num : nums) {
+			map.put(num, map.getOrDefault(num, 0) + 1);
+		}
+		int sum = 0;
+		for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+			Integer value = entry.getValue();
+			if (value < 2) {
+				continue;
+			}
+			sum += value * (value - 1) / 2;
+		}
+		return sum;
+	}
+
 }

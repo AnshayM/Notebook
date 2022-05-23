@@ -1,5 +1,6 @@
-package anshay.notebook.service;
+package anshay.notebook.service.impl;
 
+import anshay.notebook.service.ISolutionService;
 import org.springframework.stereotype.Service;
 
 /**

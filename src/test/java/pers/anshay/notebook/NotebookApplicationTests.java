@@ -2,12 +2,10 @@ package pers.anshay.notebook;
 
 import anshay.notebook.Start;
 import anshay.notebook.service.ISolutionService;
-import anshay.notebook.service.SolutionServiceImpl;
-import org.junit.Assert;
+import anshay.notebook.service.impl.SolutionServiceImpl;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.mockito.Mockito.spy;
