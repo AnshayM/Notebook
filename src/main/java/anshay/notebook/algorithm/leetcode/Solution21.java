@@ -24,9 +24,22 @@ public class Solution21 {
         ListNode l4 = new ListNode(2);
     }
 
-    public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+    public static ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+        if (list1 == null || list2 == null) {
+            return list1 != null ? list1 : list2;
+        }
+        if (list1.val < list2.val) {
+            list1.next = mergeTwoLists(list1.next, list2);
+            return list1;
+        } else {
+            list2.next = mergeTwoLists(list1, list2.next);
+            return list2;
+        }
+    }
+
+    public static ListNode mergeTwoLists2(ListNode l1, ListNode l2) {
         if (l1 == null || l2 == null) {
-            return l1 != null ? l1 : (l2 != null ? l2 : null);
+            return l1 != null ? l1 : l2;
         }
         //确定l1是较小的那个
         if (l1.val > l2.val) {
