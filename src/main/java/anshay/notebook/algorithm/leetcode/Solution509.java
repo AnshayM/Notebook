@@ -9,22 +9,37 @@ package anshay.notebook.algorithm.leetcode;
  */
 public class Solution509 {
     public static void main(String[] args) {
-        int a = fib(2);
+        int a = fib2(2);
     }
 
-    public static int fib(int N) {
-        int f1 = 0;
-        int f2 = 1;
-        if (N == 0) {
+    public static int fib(int n) {
+        int f1 = 0, f2 = 1;
+        if (n == 0) {
             return f1;
-        } else if (N == 1) {
+        } else if (n == 1) {
             return f2;
         }
-        for (int i = 2; i <= N; i++) {
+        for (int i = 2; i <= n; i++) {
             int temp = f2;
             f2 += f1;
             f1 = temp;
         }
         return f2;
+    }
+
+    /**
+     * 这个方法不如循环有效率
+     *
+     * @param n
+     * @return
+     */
+    public static int fib2(int n) {
+        if (n == 0) {
+            return 0;
+        }
+        if (n == 1 || n == 2) {
+            return 1;
+        }
+        return fib2(n - 1) + fib2(n - 2);
     }
 }
