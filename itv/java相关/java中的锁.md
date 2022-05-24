@@ -115,3 +115,8 @@ ReenterantLock可以被继承，可以有方法和变量，提供了更多的接
 3. ReenterantLock可以实现锁的多路通知
 
 底层实现上，ReenterantLock调用的unsafe的park方法加锁。synchronized是通过底层的monitor对象,操作对象头的mark word来进行操作的。
+
+
+
+#### 9. 可重入锁是怎么实现的
+

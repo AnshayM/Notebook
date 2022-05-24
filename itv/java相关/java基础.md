@@ -6,7 +6,7 @@
 
 - Stream API，流式编程
 
-- Date Time API -加强对日期和时间的处理
+- Date Time API -加强对日期和时间的处理-**本地**和**时区**
 
     原有Date类有很多问题，非线程安全、设计感很差、时区处理麻烦，未提供国际化
     java8后在java.time中提供了比较重要的两个API，

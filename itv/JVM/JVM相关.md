@@ -65,6 +65,8 @@
 新生代和老年代
 G1
 
+
+
 #### GC调优
 
 <img src="https://i.bmp.ovh/imgs/2022/05/23/585422bed89c9002.png" alt="调优步骤" style="zoom:50%;" />

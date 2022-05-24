@@ -68,12 +68,22 @@ Bean的生命周期
 
 ![bean的生命周期](https://images.xiaozhuanlan.com/photo/2019/b5d264565657a5395c2781081a7483e1.jpg)
 
-1. Bean容器找到配置文件中springbean的定义
-2. Bean容器利用Java reflection Api创建一个Bean的实例
-3. 如果涉及到一些属性值，利用set方法设置对应的属性，各种**aware**接口，BeanNameAware、BeanClassLoader、BeanFactory接口
+1. Bean容器找到配置文件中springbean的定义，Bean容器利用Java reflection Api创建一个Bean的实例
+2. 如果涉及到一些属性值，利用set方法设置对应的属性。
+3. 检查各种**aware**接口，根据对应set方法设置依赖。BeanNameAware、BeanClassLoader、BeanFactory接口
 4. 如果有和加载这个Bean的Spring容器相关的**BeanPostProcessor**对象，执行**postProcessBeforeInitialization()**方法
 5. 如果实现了InitializingBean接口，执行afterPropertiesSet()方法
 6. 如果Bean在配置文件中的定义包含init-method属性，执行指定的方法
 7. 如果有和加载这个Bean的Spring容器相关的**BeanPostProcessor**对象，执行**postProcessAfterInitialization()**方法
 8. 当销毁Bean的时候，如果实现了DisposableBean接口，执行destroy()方法
 9. 销毁Bean的时候，如果Bean配置了destroy-method属性，执行指定的方法
+
+
+
+#### Spring事务实现的原理
+
+1. 解析各个方法事务相关的属性，根据具体的属性来判断是否开启新事物
+2. 需要开启的时候，获取数据库连接，关闭自动提交功能，开启事务
+3. 执行具体的sql操作
+4. 操作过程中，执行失败，通过completeTranscationAfterThrowing来完成事务的回滚操作。具体回滚逻辑是通过doRollBack来实现的。实现也需要先获取操作对象，通过连接对象来回滚。
+5. 操作过程正常执行完，则通过completeTranscationAfterReturning来完成事务的提交操作。提交的具体逻辑是通过doCommit方法实现的。实现是也需要获取连接，通过连接对象提交。
