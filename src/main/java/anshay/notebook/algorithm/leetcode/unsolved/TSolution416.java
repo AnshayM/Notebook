@@ -1,4 +1,4 @@
-package anshay.notebook.algorithm.leetcode;
+package anshay.notebook.algorithm.leetcode.unsolved;
 
 /**
  * 分割等和子集
@@ -6,7 +6,7 @@ package anshay.notebook.algorithm.leetcode;
  * @author machao
  * @date 2022/5/24
  */
-public class Solution416 {
+public class TSolution416 {
 	public boolean canPartition(int[] nums) {
 		// 01背包变体
 		// 1.求出nums总和sum，奇数直接return false
