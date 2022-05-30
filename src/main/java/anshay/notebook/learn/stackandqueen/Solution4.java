@@ -24,7 +24,7 @@ public class Solution4 {
             char item = s.charAt(i);
             if (stack.isEmpty()) {
                 // 如果是反括号
-                if (map.keySet().contains(item)) {
+                if (map.containsKey(item)) {
                     return false;
                 }
                 stack.push(item);
@@ -32,7 +32,7 @@ public class Solution4 {
                 stack.pop();
             } else {
                 // 如果是反括号
-                if (map.keySet().contains(item)) {
+                if (map.containsKey(item)) {
                     return false;
                 }
                 stack.push(item);

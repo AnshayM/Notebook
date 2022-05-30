@@ -58,11 +58,6 @@ public class Test {
 		return p.val != q.val && isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
 	}
 
-	public static void main(String[] args) {
-		boolean b = true ^ false;
-		int a = 0;
-	}
-
 	public int minPartitions(String n) {
 		int max = 0;
 		for (char c : n.toCharArray()) {
@@ -358,6 +353,54 @@ public class Test {
 		return dp[amount] > amount ? -1 : dp[amount];
 
 	}
+
+	public boolean isValid(String s) {
+		if (s.length() % 2 > 0) {
+			return false;
+		}
+		// 用右括号作为key，对应左括号为value
+		Map<Character, Character> pairs = new HashMap<Character, Character>() {{
+			put(')', '(');
+			put(']', '[');
+			put('}', '{');
+		}};
+		Deque<Character> stack = new LinkedList<>();
+		for (char c : s.toCharArray()) {
+			// 是后面的
+			if (pairs.containsKey(c)) {
+				// 判断前面保存的东西
+				if (stack.isEmpty() || stack.peek() != pairs.get(c)) {
+					return false;
+				}
+				stack.pop();
+			} else {
+				stack.push(c);
+			}
+		}
+		return stack.isEmpty();
+	}
+
+	public int[] nextGreaterElement(int[] nums1, int[] nums2) {
+		Map<Integer, Integer> map = new HashMap<>();
+		Deque<Integer> stack = new LinkedList<>();
+		for (int i = nums2.length - 1; i >= 0; i--) {
+			while (!stack.isEmpty() && nums2[i] >= stack.peek()) {
+				stack.pop();
+			}
+			map.put(nums2[i], stack.isEmpty() ? -1 : stack.peek());
+			stack.push(nums2[i]);
+		}
+		int[] res = new int[nums1.length];
+		for (int i = 0; i < nums1.length; i++) {
+			res[i] = map.get(nums1[i]);
+		}
+		return res;
+	}
+	public void threadLocal() {
+		ThreadLocal threadLocal = new ThreadLocal();
+	}
+
+
 
 
 }

@@ -1,12 +1,14 @@
 # 全文搜索引擎 Elasticsearch 入门教程
- 
+
 全文搜索属于最常见的需求，开源的 Elasticsearch （以下简称 Elastic）是目前全文搜索引擎的首选。
 
 ![elastic](http://www.ruanyifeng.com/blogimg/asset/2017/bg2017081701.jpg)
 Elastic 的底层是开源库 Lucene。但是，你没法直接用 Lucene，必须自己写代码去调用它的接口。Elastic 是 Lucene 的封装，提供了 REST API 的操作接口，开箱即用。
 
 
+
 # 一、安装
+
 Elastic 需要 Java 8 环境。
 - （补充）在这里贴安装java8和ES的教程（wiki上的教程需要同步修改一下，最好都换成单独的。
 因为涉及到权限问题，最好放在一个公共的界面。）
