@@ -1,6 +1,6 @@
 package pers.anshay.notebook;
 
-import anshay.notebook.common.bo.ListNode;
+import pers.anshay.notebook.common.bo.ListNode;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;

@@ -1,8 +1,7 @@
 package pers.anshay.notebook;
 
-import anshay.notebook.Start;
-import anshay.notebook.service.ISolutionService;
-import anshay.notebook.service.impl.SolutionServiceImpl;
+import pers.anshay.notebook.service.ISolutionService;
+import pers.anshay.notebook.service.impl.SolutionServiceImpl;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
