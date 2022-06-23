@@ -1,4 +1,4 @@
-package anshay.notebook.future;
+package anshay.notebook.learn.future;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

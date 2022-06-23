@@ -1,4 +1,4 @@
-package anshay.notebook.thread;
+package anshay.notebook.learn.thread;
 
 import java.util.ArrayList;
 import java.util.Arrays;

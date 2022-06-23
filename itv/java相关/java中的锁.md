@@ -7,7 +7,7 @@
 
 #### 1.乐观锁和悲观锁
 乐观锁：读多写少，每次都会获取一个版本号，需要更新资源时，通过CAS比对当前版本号和之前获取的版本号，未改变执行更新，已改变则报错/重试
-被关锁：写多读少，每次都会去获取锁，执行完后释放。synchronized关键字和Lock的实现类都是悲观。
+悲观锁：写多读少，每次都会去获取锁，执行完后释放。synchronized关键字和Lock的实现类都是悲观。
 
 ![](https://img-blog.csdnimg.cn/20181122101819836.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2F4aWFvYm9nZQ==,size_16,color_FFFFFF,t_70)
 
@@ -23,7 +23,7 @@ CPU资源在不同线程中转换需要修改上下文状态。这个操作时�
 ![synchronized的四种状态](https://img-blog.csdnimg.cn/2018112210411172.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2F4aWFvYm9nZQ==,size_16,color_FFFFFF,t_70)
 
 
-这里引入两个概念，java对象头和Moitor
+这里引入两个概念，java对象头和Monitor
 
 **java对象头**
 HotSpot对象头包括MarkWord(标记字段)、Klass Pointer(类型指针)。

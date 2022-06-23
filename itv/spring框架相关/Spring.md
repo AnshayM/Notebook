@@ -59,9 +59,9 @@ Aspect-Oriented Programming: 面向切面编程
 #### Spring bean的5个作用域
 
 **singleton** ：唯一的bean实例，spring中的bean默认都是单例的
-**prototype**：每次请求都会创建一个新的bean实例
+**prototype**：原型模式，每次通过 Spring 容器获取 prototype 定义的 Bean 时，容器都将创建一个新的 Bean 实例。
 （request、session、application都是在web环境下使用的。）
-**request**：是请求作用域，每次接收请求时创建一个bean实例
+**request**：请求作用域，每次接收请求时创建一个bean实例
 **session**：会话作用域，服务器和浏览器的一次会话过程，连续的一个状态而非一个请求。sesion结束后销毁
 **application**(global-session)：全局作用域，bean是serveletContext级别的。单例作用于某一个application容器中，但一个项目不仅仅只有一个applicaitonContext。
 
@@ -85,9 +85,11 @@ spring有两个核心接口：BeanFactory和ApplicaitonContext，其中Applicait
 5. 判断是否InitializingBean：是则执行afterPropertiesSet()方法
 6. 判断init-method：如果有配置init-method属性，执行指定的方法
 7. 后置处理：如果有和加载这个Bean的Spring容器相关的**BeanPostProcessor**对象，执行**postProcessAfterInitialization()**方法
-8. 注册回调DesTruction毁掉接口
+8. 注册DesTruction回调接口
 9. 判断是否DisposableBean：如果是，当销毁Bean的时候，执行destroy()方法
 10. 判断自定义destroy-method：如果有，销毁Bean的时候，执行指定的方法
+
+为什么要做前置处理和后置处理
 
 #### Spring框架中用到什么设计模式
 
@@ -155,3 +157,7 @@ TransactionDefinition.PROPAGATION_NESTED：如果当前存在事务，则创建�
 如果不配置rollbackFor属性，事务只会遇到RuntimeException时才会回滚，加上rollbackFor=Exception.class可以让事务在遇到非运行时异常也回滚。
 
 ![](https://atts.w3cschool.cn/attachments/image/20210802/1627886982927185.png)
+
+
+
+todo 事务处理的底层流程，即在抛出异常后怎么记录状态的传递需要弄明白
