@@ -13,3 +13,10 @@ leecode刷题记录
 个人整理的广告屏蔽规则，可以屏蔽大部分广告，有部分个性化设置。比如163邮箱里我将所有与邮件无关的商业功能全部屏蔽。
 - [word特殊符号收藏](https://github.com/AnshayM/Notebook/blob/master/tools/word%E7%89%B9%E6%AE%8A%E7%AC%A6%E5%8F%B7.txt)
 整理收藏的word特殊符号，用于java导出world时输出特定符号时使用。
+
+
+#### todo
+把其他项目中使用的通用demo集中到这个noteBook中
+- mybatis集中-数据库配置，逻辑删除字段。默认配置
+  - 1。mybatis默认更新字段。
+- 缓存查询数据
