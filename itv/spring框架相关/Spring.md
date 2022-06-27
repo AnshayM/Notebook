@@ -19,15 +19,17 @@ Spring是一款轻量级的开发框架，旨在提高开发人员的开发效�
 
 Spring内部有三级缓存：
 - singletonObjects, 一级缓存，用于保存实例化、注入、初始化完成的bean实例
-- earlySingletonObjects, 二级缓存，用于保存实例化完成的bean实例
-- singletonFactories, 三级缓存，用于保存bean的创建工厂，以便后面扩展有机会创建代理对象
+- earlySingletonObjects, 二级缓存，用于保存实例化完成的bean实例(还没有填充属性)，提前暴露的对象
+- singletonFactories, 三级缓存，用于保存bean的工厂对象，以便后面扩展有机会创建代理对象
 
 以TestService1和TestService2为例
 ![](https://i.bmp.ovh/imgs/2022/05/16/e2b7562846b99295.png)
 
+
+
 #### IOC
 
-是一种设计细想，将原本在程序中手动创建对象的控制权，交由spring容器来管理。
+是一种设计思想，将原本在程序中手动创建对象的控制权，交由spring容器来管理。
 
 #### Aop
 
@@ -98,6 +100,7 @@ spring有两个核心接口：BeanFactory和ApplicaitonContext，其中Applicait
 3. 单例模式：spring bean默认都是单例的。其中有饱汉模式和恶汉模式。
 4. 观察者模式：Spring事件驱动模型就是观察者模式的很经典的应用
 5. 适配器模式：SpringAop的增强或者通知使用到了适配器模式，Spring mvc也是用适配器模式适配Controller
+6. 状态模式，根据不同的状态表现为不同的类，参见RocketMQ中
 
 
 
@@ -110,7 +113,7 @@ spring有两个核心接口：BeanFactory和ApplicaitonContext，其中Applicait
 5. 操作过程正常执行完，则通过completeTranscationAfterReturning来完成事务的提交操作。提交的具体逻辑是通过doCommit方法实现的。实现是也需要获取连接，通过连接对象提交。
 
 （todo：后面需要详细了解清楚）事务传递的实现，是通过ThreadLocal实现。
-创建玩transcation对象后，会判断是否已经存在一个事务，如果有就会调用handleExistingTranscation方法，根据配置的事物传递策略进行判断是否要加进去。
+创建完transcation对象后，会判断是否已经存在一个事务，如果有就会调用handleExistingTranscation方法，根据配置的事物传递策略进行判断是否要加进去。
 
 
 
@@ -140,7 +143,7 @@ TransactionDefinition接口定义了5种隔离等级，和mysql数据库的4个�
 
 不支持当前事务的情况：不使用同一个事务
 
-- TransactionDefinition.PROPAGATION_REQUIRES_NEW：创建一个新事务，如果当前存在事务，就把当前事务挂起。外层报错，不影响内存的正常提交。内层报错，外层也会回滚。
+- TransactionDefinition.PROPAGATION_REQUIRES_NEW：创建一个新事务，如果当前存在事务，就把当前事务挂起。外层报错，不影响内层的正常提交。内层报错，外层也会回滚。即使外层try-catch补获处理了也无法提交。
 - TransactionDefinition.PROPAGATION_NOT_SUPPORT：以非事务运行，如果当前存在事务，则把当前事务挂起。
 - TransactionDefinition.PROPAGATION_NEVER：以非事务运行，如果存在，则抛出异常
 

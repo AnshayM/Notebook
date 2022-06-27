@@ -1,7 +1,14 @@
 # Mybatis相关问题
 
 #### mybatis的动态代理怎么实现的
+
 mybatis动态代理要从启动开始说起，启动的时候去加载mybatis的配置文件（原生mybatis），然后会开始解析mybatis的配置文件中的标签，当读到mapper标签的时候就会去解析mapper文件找到对应的接口然后MapperRegistry通过反射生成MapperProxyFactory，MapperProxyFactory里面就包含了mapper的动态代理类MapperProxy，当我们getmapper的时候获取的就是动态代理类，这时候就可以执行代理方法然后执行具体的sql。
+
+1.夹在mybatis的配置文件
+2.解析配置文件中的标签，读取到mapper标签时，去接些，apper文件
+3.找到对应的借口，通过反射生成MapperProxyFactory，其中包含了mapper的动态代理类MapperProxy
+
+getMapper时获取的就是动态代理类，这时候执行代理方法然后执行具体的sql
 
 
 
