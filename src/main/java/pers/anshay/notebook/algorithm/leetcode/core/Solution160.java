@@ -1,6 +1,7 @@
-package pers.anshay.notebook.learn.linkedlist;
+package pers.anshay.notebook.algorithm.leetcode.core;
 
 import pers.anshay.notebook.common.bo.ListNode;
+import pers.anshay.notebook.learn.linkedlist.Solution3;
 
 /**
  * 相交链表
@@ -16,7 +17,7 @@ import pers.anshay.notebook.common.bo.ListNode;
  * @author: Anshay
  * @date: 2019/5/17
  */
-public class Solution4 {
+public class Solution160 {
     /**
      * 定义两个指针, 第一轮让两个到达末尾的节点指向另一个链表的头部, 最后如果相遇则为交点(在第一轮移动中恰好抹除了长度差)
      * 两个指针等于移动了相同的距离, 有交点就返回, 无交点就是各走了两条指针的长度
