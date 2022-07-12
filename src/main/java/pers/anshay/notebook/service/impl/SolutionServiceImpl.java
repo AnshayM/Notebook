@@ -1,7 +1,9 @@
 package pers.anshay.notebook.service.impl;
 
-import pers.anshay.notebook.service.ISolutionService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import pers.anshay.notebook.service.ISolutionService;
 
 /**
  * @author machao
@@ -9,6 +11,12 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class SolutionServiceImpl implements ISolutionService {
+
+	/**
+	 * 这个logger和@Slf4j的log是同一个类
+	 */
+	private static final Logger logger = LoggerFactory.getLogger(SolutionServiceImpl.class);
+
 	@Override
 	public int getResult(int index) throws Exception {
 

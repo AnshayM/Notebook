@@ -1,4 +1,4 @@
-package pers.anshay.notebook.interview.double_pointer;
+package pers.anshay.notebook.algorithm.double_pointer;
 
 /**
  * 633. 平方数之和

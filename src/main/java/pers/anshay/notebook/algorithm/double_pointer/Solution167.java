@@ -1,4 +1,4 @@
-package pers.anshay.notebook.interview.double_pointer;
+package pers.anshay.notebook.algorithm.double_pointer;
 
 import java.util.HashMap;
 import java.util.Map;

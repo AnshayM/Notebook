@@ -1,4 +1,4 @@
-package pers.anshay.notebook.interview.double_pointer;
+package pers.anshay.notebook.algorithm.double_pointer;
 
 /**
  * 345. 反转字符串中的元音字母

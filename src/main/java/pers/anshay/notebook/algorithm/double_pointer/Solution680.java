@@ -1,4 +1,4 @@
-package pers.anshay.notebook.interview.double_pointer;
+package pers.anshay.notebook.algorithm.double_pointer;
 
 /**
  * 680:验证回文字符串 Ⅱ

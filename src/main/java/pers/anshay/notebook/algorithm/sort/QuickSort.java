@@ -1,4 +1,4 @@
-package pers.anshay.notebook.interview;
+package pers.anshay.notebook.algorithm.sort;
 
 import java.util.Random;
 

@@ -1,4 +1,4 @@
-package pers.anshay.notebook.interview.double_pointer;
+package pers.anshay.notebook.algorithm.double_pointer;
 
 import pers.anshay.notebook.common.bo.ListNode;
 

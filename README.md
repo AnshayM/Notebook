@@ -43,7 +43,8 @@ leecode刷题记录
 - [ ] 自定义注解
 - [ ] 配置类读取-注入值
 
-- [ ] 日志获取工厂 private static final Logger logger = LoggerFactory.getLogger(ExecutorConfiguration.class);
+- [X] 日志获取工厂 private static final Logger logger = LoggerFactory.getLogger(ExecutorConfiguration.class);
+  这个和@Slf4j拿到的是同一个类
 - [ ] Mock简单编写
 
 
