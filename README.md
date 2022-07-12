@@ -15,8 +15,38 @@ leecode刷题记录
 整理收藏的word特殊符号，用于java导出world时输出特定符号时使用。
 
 
-#### todo
+#### Todo
+**项目通用组建**
+- [ ] 通用返回包装类
+- [ ] 全局异常捕获
+**登录校验**
+- [ ] jwt登录
+- [ ] authe2登录
+- [ ] 日志控制logback
+
+
 把其他项目中使用的通用demo集中到这个noteBook中
-- mybatis集中-数据库配置，逻辑删除字段。默认配置
-  - 1。mybatis默认更新字段。
-- 缓存查询数据
+**数据库相关**
+- [ ] mybatis集中-数据库配置，逻辑删除字段。默认配置
+- [ ] mybatis默认更新字段。
+- [ ] 缓存查询数据
+- [ ] 数据库连接
+- [ ] entity常规
+- [ ] 反序列化mapper
+
+
+**多线程相关demo**
+- [X] 创建线程池
+- [ ] 定时任务线程池
+
+- [ ] springboot-publisher
+- [ ] 自定义注解
+- [ ] 配置类读取-注入值
+
+- [ ] 日志获取工厂 private static final Logger logger = LoggerFactory.getLogger(ExecutorConfiguration.class);
+- [ ] Mock简单编写
+
+
+
+
+

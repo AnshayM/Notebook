@@ -1,2 +1,8 @@
 server:
   port: 8099
+
+spring:
+  profiles:
+    # todo 验证先后关系的生效优先级
+    include: config
+    active: dev
