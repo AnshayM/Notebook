@@ -16,4 +16,12 @@ import org.springframework.context.annotation.Configuration;
 public class LocalUserConfig {
     private String user;
     private String password;
+
+    @Override
+    public String toString() {
+        return "LocalUserConfig{" +
+                "user='" + user + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
 }
