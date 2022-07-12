@@ -23,6 +23,8 @@ leecode刷题记录
 - [ ] jwt登录
 - [ ] authe2登录
 - [ ] 日志控制logback
+- [X] 日志获取工厂 private static final Logger logger = LoggerFactory.getLogger(ExecutorConfiguration.class);
+    这个和@Slf4j拿到的是同一个类
 
 
 把其他项目中使用的通用demo集中到这个noteBook中
@@ -43,8 +45,7 @@ leecode刷题记录
 - [ ] 自定义注解
 - [ ] 配置类读取-注入值
 
-- [X] 日志获取工厂 private static final Logger logger = LoggerFactory.getLogger(ExecutorConfiguration.class);
-  这个和@Slf4j拿到的是同一个类
+
 - [ ] Mock简单编写
 
 
