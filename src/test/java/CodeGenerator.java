@@ -47,7 +47,7 @@ public class CodeGenerator {
         gc.setAuthor("anshay");
         gc.setOpen(false);
         // 是否覆盖文件[entity,service,serviceImpl,controller],不想覆盖则设置为false
-        gc.setFileOverride(true);
+        gc.setFileOverride(false);
         gc.setBaseResultMap(true);
         gc.setEntityName("%sEntity");
         mpg.setGlobalConfig(gc);

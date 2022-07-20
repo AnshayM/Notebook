@@ -11,10 +11,12 @@ import javax.validation.constraints.NotNull;
 @Data
 public class UserAddBo {
 
+    @NotNull(message = "用户id不可为空")
+    private Long id;
+
     /**
      * 名称
      */
-    @NotNull(message = "用户名不可为空")
     private String name;
 
     /**

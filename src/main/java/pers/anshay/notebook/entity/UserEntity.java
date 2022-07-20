@@ -16,14 +16,14 @@ import lombok.EqualsAndHashCode;
  * @since 2022-07-19
  */
 @Data
-@EqualsAndHashCode(callSuper = true)
 @TableName("user")
+@EqualsAndHashCode(callSuper = true)
 public class UserEntity extends BaseEntity {
 
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "id", type = IdType.AUTO)
-    private Integer id;
+    private Long id;
 
     /**
      * 名称

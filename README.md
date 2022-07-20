@@ -33,8 +33,8 @@ leecode刷题记录
 - [ ] mybatis默认更新字段。
 - [ ] 缓存查询数据
 - [ ] 数据库连接
-- [ ] entity常规
-- [ ] 反序列化mapper
+- [X] entity常规
+- [X] 反序列化mapper
 
 
 **多线程相关demo**

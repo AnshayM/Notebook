@@ -2,6 +2,7 @@ package pers.anshay.notebook.controller;
 
 
 import org.springframework.web.bind.annotation.*;
+import pers.anshay.notebook.DaoException;
 import pers.anshay.notebook.pojo.user.UserAddBo;
 import pers.anshay.notebook.service.IUserService;
 
@@ -24,13 +25,7 @@ public class UserController {
 
     @GetMapping("/list")
     public Object listUsers() {
-        // todo 不能有密码等信息
-        return userService.list();
-    }
-
-    @GetMapping("/listManage")
-    public Object listManage() {
-        return userService.list();
+        return userService.listUserInfo();
     }
 
     @DeleteMapping("/delete/{id}")
@@ -39,13 +34,13 @@ public class UserController {
     }
 
     @PostMapping("/add")
-    public Object addUser(@RequestBody UserAddBo user) {
+    public Object addUser(@RequestBody UserAddBo user) throws DaoException {
         return userService.add(user);
     }
 
     @PostMapping("/update")
     public Object updateUser(@RequestBody UserAddBo user) {
-        return userService.add(user);
+        return userService.updateUser(user);
     }
 }
 
