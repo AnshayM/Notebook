@@ -1,4 +1,4 @@
-package pers.anshay.notebook.learn.stackandqueen;
+package pers.anshay.notebook.algorithm.leetcode.core;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -10,13 +10,13 @@ import java.util.Stack;
  * @author: Anshay
  * @date: 2019/4/3
  */
-public class Solution4 {
+public class Solution20 {
     public boolean isValid(String s) {
         if (s.length() % 2 != 0) {
             return false;
         }
-        Stack stack = new Stack();
-        Map map = new HashMap<>();
+        Stack<Character> stack = new Stack<>();
+        Map<Character, Character> map = new HashMap<>();
         map.put(')', '(');
         map.put(']', '[');
         map.put('}', '{');
@@ -38,9 +38,6 @@ public class Solution4 {
                 stack.push(item);
             }
         }
-        if (stack.isEmpty()) {
-            return true;
-        }
-        return false;
+        return stack.isEmpty();
     }
 }
