@@ -1,4 +1,4 @@
-package pers.anshay.notebook.algorithm.leetcode.easy;
+package pers.anshay.notebook.algorithm.leetcode.core;
 
 /**
  * 198. 打家劫舍
@@ -29,8 +29,16 @@ package pers.anshay.notebook.algorithm.leetcode.easy;
  * @author: Anshay
  * @date: 2019/10/25
  */
-public class S198HouseRobber {
+public class Solution198 {
+    /**
+     * 动态规划 dp[i]=max(dp[i-2]+nums[i],dp[i-1])
+     * 顺序递增的方式，可以降低计算复杂度，
+     *
+     * @param nums
+     * @return
+     */
     public int rob(int[] nums) {
+        // 使用数组的方式保存记录值
         int[] dp = new int[nums.length + 2];
         for (int i = 0; i < nums.length; i++) {
             dp[i + 2] = Math.max(dp[i + 1], dp[i] + nums[i]);

@@ -1,6 +1,4 @@
-package pers.anshay.notebook.algorithm.leetcode.easy;
-
-import java.util.concurrent.locks.ReentrantLock;
+package pers.anshay.notebook.algorithm.leetcode.core;
 
 /**
  * 70.爬楼梯
@@ -33,15 +31,32 @@ import java.util.concurrent.locks.ReentrantLock;
  * @author: Anshay
  * @date: 2019/10/24
  */
-public class S70ClimbingStairs {
+public class Solution70 {
     public static void main(String[] args) {
         int res = climbStairs(4);
 
     }
 
+    /**
+     * f(x)=f(x-1)+f(x-2)
+     * 0到0只有一种方案：f(0)=1,0到1级也只有一种方案f(1)=1
+     *
+     * @param n
+     * @return
+     */
     public static int climbStairs(int n) {
-        ReentrantLock lock = null;
+        int f1 = 0, f2 = 0, r = 1;
+        for (int i = 1; i <= n; i++) {
+            f1 = f2;
+            f2 = r;
+            r = f1 + f2;
+        }
+        return r;
+    }
 
+
+    public static int climbStairs2(int n) {
+        /*1级1种，2级别2种，从这里开始累加*/
         if (n <= 2) {
             return n;
         }

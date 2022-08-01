@@ -1,4 +1,4 @@
-package pers.anshay.notebook.algorithm.leetcode.easy;
+package pers.anshay.notebook.algorithm.leetcode.core;
 
 /**
  * 买卖股票的最佳时机
@@ -11,7 +11,7 @@ package pers.anshay.notebook.algorithm.leetcode.easy;
  * @author: Anshay
  * @date: 2019/7/3
  */
-public class S121BestTimeToBuyAndSellStock {
+public class Solution121 {
     public int maxProfit(int[] prices) {
         if (prices == null || prices.length <= 1) {
             return 0;

@@ -1,4 +1,4 @@
-package pers.anshay.notebook.algorithm.leetcode;
+package pers.anshay.notebook.algorithm.leetcode.core;
 
 /**
  * 最长公共前缀
@@ -17,11 +17,39 @@ public class Solution14 {
         System.out.println(s);
     }
 
-    /**纵向比较时，只需要比较对应i位置的字符即可，不用比较startsWith，startsWith把前面的都比较了一遍
+    /**
+     * 取出第一个位置的字符串，然后在2重for循环中比对每个字符串的第i个字符是否相等。
+     * 不相等/长度超过了，则直接返回
+     *
      * @param strs
      * @return
      */
     public static String longestCommonPrefix(String[] strs) {
+        StringBuilder res = new StringBuilder();
+        if (strs == null || strs.length == 0) {
+            return res.toString();
+        } else if (strs.length == 1) {
+            return strs[0];
+        }
+        // 针对第一个字符串的char做遍历
+        for (int i = 0; i < strs[0].length(); i++) {
+            char ch = strs[0].charAt(i);
+            // 遍历strs中每个字符串在i位置的char是否相同
+            for (int j = 1; j < strs.length; j++) {
+                // 超过长度或者指定位置不相同，则直接返回结果
+                if (i >= strs[j].length() || strs[j].charAt(i) != ch) {
+                    return res.toString();
+                }
+                // 遍历到最后一个，则把这个字母加进去
+                if (j == strs.length - 1) {
+                    res.append(ch);
+                }
+            }
+        }
+        return res.toString();
+    }
+
+    public static String longestCommonPrefix2(String[] strs) {
         String common = "";
         String temp;
         if (strs == null || strs.length == 0) {
@@ -41,26 +69,5 @@ public class Solution14 {
         return common;
     }
 
-    public static String longestCommonPrefix2(String[] strs) {
-        StringBuilder res = new StringBuilder();
-        if (strs == null || strs.length == 0) {
-            return res.toString();
-        } else if (strs.length == 1) {
-            return strs[0];
-        }
-        for (int i = 0; i < strs[0].length(); i++) {
-            char ch = strs[0].charAt(i);
-            for (int j = 1; j < strs.length; j++) {
-                // 超过长度或者指定位置不相同，则直接返回结果
-                if (i >= strs[j].length() || strs[j].charAt(i) != ch) {
-                    return res.toString();
-                }
-                // 遍历到最后一个，则把这个字母加进去
-                if (j == strs.length - 1) {
-                    res.append(ch);
-                }
-            }
-        }
-        return res.toString();
-    }
+
 }

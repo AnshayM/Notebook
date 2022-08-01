@@ -1,4 +1,4 @@
-package pers.anshay.notebook.algorithm.leetcode;
+package pers.anshay.notebook.algorithm.leetcode.core;
 
 
 import pers.anshay.notebook.common.bo.ListNode;
