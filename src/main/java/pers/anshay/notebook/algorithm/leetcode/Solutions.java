@@ -119,6 +119,32 @@ public class Solutions {
         return count;
     }
 
+    public int countAsterisks(String s) {
+        int ct = 0;
+        boolean flag = false;
+        s.charAt(0);
+        for (char c : s.toCharArray()) {
+            if ('|' == c) {
+                flag = !flag;
+            } else if ('*' == c && !flag) {
+                ct++;
+            }
+        }
+        return ct;
+    }
+
+    public List<Boolean> kidsWithCandies(int[] candies, int extraCandies) {
+        List<Boolean> list = new ArrayList<>();
+        int max = -1;
+        for (int candy : candies) {
+            max = Math.max(max, candy);
+        }
+        for (int candy : candies) {
+            list.add(candy + extraCandies >= max);
+        }
+        return list;
+    }
+
     /**
      * 1442. 形成两个异或相等数组的三元组数目
      *
