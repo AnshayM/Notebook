@@ -38,7 +38,49 @@ www.w3cschool.cn##DIV[id="topbanner"]
 www.jenkins.org.cn##ASIDE[id="custom_html-3"][class="widget_text widget widget_custom_html"]
 blog.csdn.net##A[class="toolbar-advert-default "]
 www.guanggoo.com##DIV[class="sidebox container-box mt10"]
+www.w3cschool.cn##DIV[id="rfbanner"]
+www.bilibili.com##DIV[class="extension"]
+time.geekbang.org##DIV[class="_9MXN3XsY_0 _3pcP2VEJ_0"]
+blog.csdn.net##A[class="toolbar-advert-default"]
+mac.orsoon.com##DIV[id="national-warp"][class="national-warp show"]
+blog.csdn.net##DIV[class="toolbar-advert"]
+www.macw.com##DIV[class="vip-entry show"]
+jingyan.baidu.com##DIV[class="wgt-feeds-video"]
+jingyan.baidu.com##DIV[id="cms-slide-wrap"][class="cms-slide-wrap"]
+www.douyu.com##DIV[id="douyu_room_normal_player_danmuDom"][class="DanmuEffectDom-container"]
+fanyi.baidu.com##DIV[class="app-side-banner"]
+www.jianshu.com##DIV[class="_27yofX"]
+www.speedtest.cn##DIV[class="shade"]
+www.guozaoke.com##DIV[class="sidebox container-box mt10"]
+map.baidu.com##DIV[id="activity-banner-panel"]
+baike.baidu.com##DIV[class="poiLeadDownloadCard"]
+map.baidu.com##DIV[class="poiLeadDownloadCard"]
+www.yisu.com##DIV[class="information-right-img"]
+baike.baidu.com##DIV[class="lemmaWgt-promotion-slide"]
 @@|http://www.ruanyifeng.com/blog/2019/05/weekly-issue-55.html|$document
 @@|http://scuseami.net/-81170VJNS/pBJ?$document
 @@||tool.lu/timestamp/^$document
 @@||jenkins.org.cn/821.html^$document
+@@||cn.pornhub.com/information/2257^$document
+@@||cn.pornhub.com/$document
+@@||http://t66y.com/
+@@||t66y.com/$document
+@@||www.i4.cn/$document
+@@||leetcode-cn.com/*^$document
+@@||zdhaitao.com/*^$document
+@@||auth.navicat.com/*^$document
+@@||10.10.46.218/*^$document
+@@||ruanyifeng.com/*^$document
+@@||confluence.in.wezhuiyi.com/*^$document
+@@||softphone.pal.in.wezhuiyi.com/*^$document
+@@||qcc.com/*^$document
+@@||hrsspub.sz.gov.cn/*^$document
+@@||staruml.io/*^$document
+@@||ouo.io/*^$document
+@@||ww25.club.hmoe.club/*^$document
+@@||developers.turing.com/*^$document
+@@||tapd.cn/*^$document
+@@||unclechen.github.io/*^$document
+@@||pal-pal-portal-18457.ite.wezhuiyi.com/*^$document
+@@||447.cc/*^$document
+@@||hrss.sz.gov.cn/*^$document
