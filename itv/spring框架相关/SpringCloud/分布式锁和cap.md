@@ -80,7 +80,7 @@ some redis command
 EXEC
 ```
 
-在multi和exec包裹的redis明亮，保证所有事务内的命令会串行执行，不会在执行过程中被其他客户端打断。
+在multi和exec包裹的redis命令，保证所有事务内的命令会串行执行，不会在执行过程中被其他客户端打断。
 watch命令能监视某个键，当事务执行时，被监视的键被其他客户端修改了值，事务运行失败，返回响应错误。
 discard用于取消事务，放弃执行事务块内所有命令
 
@@ -107,7 +107,7 @@ def acqure_lock_with_watch(conn, lockname, acquire_timeout=10):
 
 1.2 sentnx实现分布式锁
 
-sentnx：(SET if Not eXists)仅在指定键不存在时，向redis添加一个键值对，返回1。若已存在，则不做处理，返回0。
+sentnx：(SET if Not exists)仅在指定键不存在时，向redis添加一个键值对，返回1。若已存在，则不做处理，返回0。
 redis客户端保证对统一键名称，多个客户端同时设置其值时只有一个客户端能够设置成功的原子性。
 
 ```python
